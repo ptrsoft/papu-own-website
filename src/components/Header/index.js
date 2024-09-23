@@ -13,9 +13,9 @@ const Header = () => {
   };
 
   return (
-    <div className="w-100 d-block px-5 header-main">
+    <div className="w-100 d-block px-lg-5 px-md-2 header-main">
       <Container fluid>
-        <div className="header w-100 d-block py-2">
+        <div className="header w-100 py-2">
           <Row className="align-items-center">
             <Col lg={5} md={4} sm={8} xs={6}>
               <Navbar className="justify-content-center">
@@ -39,7 +39,9 @@ const Header = () => {
                   <Link
                     to="/service/migration-modernization"
                     className={
-                      activePath === "/service/migration-modernization" ? "nav-link active" : "nav-link"
+                      activePath === "/service/migration-modernization"
+                        ? "nav-link active"
+                        : "nav-link"
                     }
                   >
                     Service
@@ -85,6 +87,80 @@ const Header = () => {
                     Contact
                   </Link>
                 </Nav>
+              </Navbar>
+            </Col>
+          </Row>
+        </div>
+        <div className="small-screen-header w-100 py-2 px-3">
+          <Row className="align-items-center">
+            <Col md={8} sm={8} xs={8}>
+              <Link to="/" className="logo w-100 d-flex">
+                <img src={Logo} alt="I’m Papu Bhattacharya, DevOps Expert" />
+              </Link>
+            </Col>
+            <Col md={4} sm={4} xs={4}>
+              <Navbar expand="lg" className="justify-content-end">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav>
+                    <Link
+                      to="/"
+                      className={
+                        activePath === "/" ? "nav-link active" : "nav-link"
+                      }
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      to="/about"
+                      className={
+                        activePath === "/about" ? "nav-link active" : "nav-link"
+                      }
+                    >
+                      About
+                    </Link>
+                    <Link
+                      to="/service/migration-modernization"
+                      className={
+                        activePath === "/service/migration-modernization"
+                          ? "nav-link active"
+                          : "nav-link"
+                      }
+                    >
+                      Service
+                    </Link>
+                    <Link
+                      to="/resume"
+                      className={
+                        activePath === "/resume"
+                          ? "nav-link active"
+                          : "nav-link"
+                      }
+                    >
+                      Resume
+                    </Link>
+                    <Link
+                      to="/project"
+                      className={
+                        activePath === "/project"
+                          ? "nav-link active"
+                          : "nav-link"
+                      }
+                    >
+                      Project
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className={
+                        activePath === "/contact"
+                          ? "nav-link active"
+                          : "nav-link"
+                      }
+                    >
+                      Contact
+                    </Link>
+                  </Nav>
+                </Navbar.Collapse>
               </Navbar>
             </Col>
           </Row>
