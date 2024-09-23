@@ -25,25 +25,25 @@ class Testimonials extends Component {
         {
           breakpoint: 992,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            arrows: true,
+            centerPadding: "150px",
           },
         },
         {
           breakpoint: 767,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
+            centerPadding: "100px",
           },
         },
         {
           breakpoint: 568,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
+            centerPadding: "50px",
+          },
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            centerPadding: "20px",
           },
         },
       ],

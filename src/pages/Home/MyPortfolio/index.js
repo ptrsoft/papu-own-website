@@ -22,30 +22,24 @@ class MyPortfolio extends Component {
           breakpoint: 992,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2,
-            arrows: true,
           },
         },
         {
           breakpoint: 767,
           settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
+            slidesToShow: 2,
           },
         },
         {
           breakpoint: 568,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: true,
           },
         },
       ],
     };
     return (
-      <div className="portfolio-container d-block w-100 p-5 mt-5 mb-5" id="portfolio">
+      <div className="portfolio-container d-block w-100 p-lg-5 p-md-3 pb-4 mt-5 mb-5" id="portfolio">
         <Container fluid>
           <div className="d-flex w-100 pb-4 heading">
             <h2>

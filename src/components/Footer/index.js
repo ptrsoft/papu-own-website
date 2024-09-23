@@ -5,9 +5,9 @@ import Logo from "../../assets/img/logo.png";
 
 const Footer = () => {
   return (
-    <div className="footer d-block w-100 py-5 px-5">
+    <div className="footer d-block w-100 py-md-5 py-4 px-lg-5 px-2">
       <Container fluid>
-        <div className="d-flex align-items-center justify-content-between pb-5 mb-4 lets-connect">
+        <div className="d-flex align-items-center justify-content-between pb-md-5 pb-4 mb-4 lets-connect">
           <h2>Lets Connect there</h2>
           <Button>
             Hire me <i className="fa-solid fa-arrow-right"></i>

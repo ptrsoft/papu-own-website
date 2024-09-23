@@ -14,7 +14,7 @@ class MigrationModernization extends Component {
 
   render() {
     return (
-      <div className="main-container d-block w-100 px-5">
+      <div className="main-container d-block w-100 px-lg-5 px-md-3 px-2">
         <Container fluid>
           <div className="d-block w-100 text-center pb-4 pt-4 main-heading">
             <span>Microservices Transformation</span> in Cloud

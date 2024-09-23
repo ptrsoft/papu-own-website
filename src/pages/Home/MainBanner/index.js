@@ -34,7 +34,7 @@ class MainBanner extends Component {
   render() {
     const { isScrolled } = this.state;
     return (
-      <div className={`main-banner-container d-block w-100 pt-3 px-5`}>
+      <div className="main-banner-container d-block w-100 pt-3 px-md-5 px-2">
         <Container fluid>
           <div className="d-block w-100 text-center heading">
             <div

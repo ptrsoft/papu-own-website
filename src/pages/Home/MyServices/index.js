@@ -33,16 +33,14 @@ class MyServices extends Component {
           breakpoint: 992,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2,
-            arrows: true,
+            slidesToScroll: 1,
           },
         },
         {
           breakpoint: 767,
           settings: {
-            slidesToShow: 1,
+            slidesToShow: 2,
             slidesToScroll: 1,
-            arrows: true,
           },
         },
         {
@@ -50,13 +48,12 @@ class MyServices extends Component {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: true,
           },
         },
       ],
     };
     return (
-      <div className="services-container d-block w-100 p-5 mb-5" id="services">
+      <div className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5" id="services">
         <div className="services-bg-left">
           <img src={ServicesBgLeft} alt="" />
         </div>

@@ -10,8 +10,8 @@ class MyWorkExperince extends Component {
 
   render() {
     return (
-      <div className="experince-container d-block w-100 py-5 px-5 ">
-        <h2 className="d-block w-100 text-center pb-5 heading">
+      <div className="experince-container d-block w-100 py-lg-5 py-3 px-lg-5 px-3">
+        <h2 className="d-block w-100 text-center pb-md-5 mb-3 heading">
           My <span>Work Experince</span>
         </h2>
         <Container fluid>
@@ -23,7 +23,7 @@ class MyWorkExperince extends Component {
               </div>
             </Col>
             <Col lg={2}>
-              <div className="d-block w-100 h-100 text-center point">
+              <div className="d-block w-100 h-100 text-lg-center point">
                 <span></span>
               </div>
             </Col>
@@ -46,7 +46,7 @@ class MyWorkExperince extends Component {
               </div>
             </Col>
             <Col lg={2}>
-              <div className="d-block w-100 h-100 text-center point">
+              <div className="d-block w-100 h-100 text-lg-center point">
                 <span></span>
               </div>
             </Col>
@@ -68,7 +68,7 @@ class MyWorkExperince extends Component {
               </div>
             </Col>
             <Col lg={2}>
-              <div className="d-block w-100 h-100 text-center point">
+              <div className="d-block w-100 h-100 text-lg-center point">
                 <span></span>
               </div>
             </Col>
@@ -90,7 +90,7 @@ class MyWorkExperince extends Component {
               </div>
             </Col>
             <Col lg={2}>
-              <div className="d-block w-100 h-100 text-center point last">
+              <div className="d-block w-100 h-100 text-lg-center point last">
                 <span></span>
               </div>
             </Col>

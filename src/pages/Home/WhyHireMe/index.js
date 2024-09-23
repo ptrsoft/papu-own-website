@@ -10,10 +10,10 @@ class WhyHireMe extends Component {
 
   render() {
     return (
-      <div className="why-hire-container d-block w-100 p-5">
+      <div className="why-hire-container d-block w-100 px-lg-5 px-md-3 px-2 py-5">
         <Container fluid>
           <Row className="align-items-center">
-            <Col lg={6}>
+            <Col lg={6} md={6}>
               <div className="d-block w-100 my-3 why-hire-image">
                 <img src={PapuSir} alt="" />
                 <div className="circles">
@@ -26,7 +26,7 @@ class WhyHireMe extends Component {
                 </div>
               </div>
             </Col>
-            <Col lg={6}>
+            <Col lg={6} md={6}>
               <div className="d-block w-100 why-hire-text">
                 <h2>
                   Why <span>Hire me</span>?
@@ -59,7 +59,7 @@ class WhyHireMe extends Component {
                   </Col>
                 </Row>
               </div>
-              <div className="d-block w-100 pt-5 hire-me-btn">
+              <div className="d-block w-100 pt-md-5 hire-me-btn">
                 <Button variant="outline-primary">Hire me</Button>
               </div>
             </Col>

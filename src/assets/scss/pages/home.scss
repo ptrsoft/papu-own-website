@@ -920,3 +920,242 @@
     transform: translatey(0px);
   }
 }
+
+@media only screen and (max-width: 992px) {
+  .main-banner-container {
+    .heading {
+      h2 {
+        font-size: 36px;
+        .heading-vector {
+          width: 60px;
+          left: 20%;
+          bottom: -50px;
+        }
+      }
+    }
+    .contents {
+      position: relative;
+      .content-left {
+        position: absolute;
+        opacity: 1;
+        transform: translateY(-200px);
+        &.scrolled {
+          opacity: 0;
+        }
+      }
+      .content-right {
+        position: absolute;
+        opacity: 1;
+        right: 0px;
+        transform: translateY(-200px);
+        &.scrolled {
+          opacity: 0;
+        }
+      }
+      .content-center {
+        width: 100%;
+        .animate {
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .experince-container {
+    .point {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      &.last {
+        &::before {
+          display: block;
+        }
+      }
+      &::before {
+        height: calc(100% - 25px);
+        left: 14px;
+        top: 25px;
+      }
+    }
+  }
+  .why-hire-container {
+    .why-hire-image {
+      .circles {
+        display: none;
+      }
+    }
+    .why-hire-text {
+      h2 {
+        font-size: 36px;
+      }
+    }
+    .projects {
+      .project {
+        p {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .hire-me-btn {
+      .btn-outline-primary {
+        padding: 15px 30px;
+      }
+    }
+  }
+  .portfolio-container {
+    .heading {
+      h2 {
+        font-size: 36px;
+      }
+    }
+    .portfolio-box {
+      .name {
+        a {
+          font-size: 24px;
+        }
+      }
+    }
+    .slick-next,
+    .slick-prev {
+      width: 48px;
+      height: 48px;
+      &::before {
+        width: 38px;
+        height: 38px;
+      }
+    }
+    .slick-next {
+      right: -20px;
+    }
+    .slick-prev {
+      left: -20px;
+    }
+  }
+  .services-container {
+    .services-box {
+      .button {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-banner-container {
+    .heading {
+      h2 {
+        font-size: 30px;
+        .heading-vector {
+          width: 40px;
+          left: 3%;
+          bottom: -40px;
+        }
+      }
+    }
+    .contents {
+      .content-left {
+        display: none !important;
+      }
+      .content-right {
+        display: none !important;
+      }
+      .content-center {
+        .banner-buttons {
+          left: 0;
+          .btn {
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 16px;
+          }
+        }
+        .animate {
+          top: 0;
+        }
+      }
+    }
+  }
+  .services-container {
+    .services-bg-left {
+      width: 50%;
+      top: 25%;
+    }
+    .services-bg-right {
+      width: 50%;
+      top: 25%;
+    }
+    .heading {
+      h2 {
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+    }
+    .services-box {
+      a {
+        .services-inner {
+          .name {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+  .experince-container {
+    .heading {
+      font-size: 24px;
+    }
+    .experince-left {
+      h3 {
+        font-size: 18px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+    .experince-right {
+      h3 {
+        font-size: 18px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+  .portfolio-container {
+    .heading {
+      flex-wrap: wrap;
+      h2 {
+        font-size: 24px;
+      }
+    }
+    .portfolio-box {
+      .name {
+        a {
+          font-size: 20px;
+        }
+      }
+    }
+    .slick-next {
+      right: 0px;
+    }
+    .slick-prev {
+      left: 0px;
+    }
+  }
+  .testimonials-container {
+    .heading {
+      h2 {
+        font-size: 30px;
+        background-position: 100% 0;
+      }
+      p {
+        font-size: 14px;
+      }
+      .heading-inner {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+}

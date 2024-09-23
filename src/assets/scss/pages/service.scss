@@ -1,6 +1,5 @@
 .main-heading {
   font-size: 48px;
-  line-height: 60px;
   font-weight: 600;
   color: rgba(23, 23, 23, 1);
   span {
@@ -36,6 +35,28 @@
     }
     li {
       margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-heading {
+    font-size: 32px;
+  }
+  .service-contents {
+    h3 {
+      font-size: 24px;
+    }
+    .content {
+      h4 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 14px;
+      }
+      li {
+        font-size: 14px;
+      }
     }
   }
 }
