@@ -59,15 +59,15 @@ const Footer = () => {
                       <Link to="#" className="nav-link">
                         About Us
                       </Link>
-                      <Link to="#" className="nav-link">
+                      <a href="#services" className="nav-link">
                         Service
-                      </Link>
+                      </a>
                       <Link to="#" className="nav-link">
                         Resume
                       </Link>
-                      <Link to="#" className="nav-link">
+                      <a href="#portfolio" className="nav-link">
                         Project
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </Col>

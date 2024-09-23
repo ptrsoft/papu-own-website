@@ -45,7 +45,7 @@ class MyPortfolio extends Component {
       ],
     };
     return (
-      <div className="portfolio-container d-block w-100 p-5 mt-5 mb-5">
+      <div className="portfolio-container d-block w-100 p-5 mt-5 mb-5" id="portfolio">
         <Container fluid>
           <div className="d-flex w-100 pb-4 heading">
             <h2>
