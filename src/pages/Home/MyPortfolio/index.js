@@ -18,12 +18,12 @@ class MyPortfolio extends Component {
 
   render() {
     var settings = {
-      // dots: true,
+      dots: true,
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 2,
       slidesToScroll: 1,
-      arrows: false,
+      arrows: true,
       responsive: [
         {
           breakpoint: 992,
