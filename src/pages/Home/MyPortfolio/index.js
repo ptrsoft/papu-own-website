@@ -63,7 +63,7 @@ class MyPortfolio extends Component {
                 <a href="#">SAAS Automation</a>
               </div>
               <div className="button">
-              <Link to={'/portfolio/saas-automation'}>
+              <Link target="_blank"  to={'/portfolio/saas-automation'}>
                 <Button><i className="fa-solid fa-arrow-right"></i></Button>
               </Link>
               </div>
@@ -78,7 +78,7 @@ class MyPortfolio extends Component {
                 <a href="#">Microservices Transformation</a>
               </div>
               <div className="button">
-               <Link to={'/portfolio/microservices-transformation'}> <Button><i className="fa-solid fa-arrow-right"></i></Button></Link>
+               <Link target="_blank" to={'/portfolio/microservices-transformation'}> <Button><i className="fa-solid fa-arrow-right"></i></Button></Link>
               </div>
             </div>
 
@@ -92,7 +92,7 @@ class MyPortfolio extends Component {
                 <a href="#"> SRE Framework Development</a>
               </div>
               <div className="button">
-                <Link to={'/portfolio/sre-framework-development'}>
+                <Link target="_blank"  to={'/portfolio/sre-framework-development'}>
                 <Button><i className="fa-solid fa-arrow-right"></i></Button>
                 </Link>
               </div>
