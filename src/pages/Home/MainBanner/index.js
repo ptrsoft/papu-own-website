@@ -81,8 +81,9 @@ class MainBanner extends Component {
             >
               <i className="fa-solid fa-quote-left"></i>
               <p>
-                Hands-on DevOps Expert, 25 Years in DevSecOps Solutioning and
-                Product Development.
+                {/* Hands-on DevOps Expert, 25 Years in DevSecOps Solutioning and
+                Product Development. */}
+                Writing Open DevSecOps Tools/ Frameworks to do "More in Less with Cloud"
               </p>
             </div>
             <div className="d-inline-flex justify-content-center content-center" >
@@ -120,7 +121,13 @@ class MainBanner extends Component {
                 <i className="fa-solid fa-star"></i>
               </div>
               <div className="years">25 Years</div>
-              <div className="experince">Experience</div>
+              <div style={{textAlign:'end'}} className="experince">in DevOps Product Development
+
+
+
+
+
+</div>
             </div>
           </div>
         </Container>
