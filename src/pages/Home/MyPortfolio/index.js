@@ -50,7 +50,7 @@ class MyPortfolio extends Component {
         <Container fluid>
           <div className="d-flex w-100 pb-4 heading">
             <h2>
-              My <span>Portfolio</span>
+              My <span>Portfolios</span>
             </h2>
             <Button>See All</Button>
           </div>
