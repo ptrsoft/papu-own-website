@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Slider from "react-slick";
 import PortfolioImage from "../../../assets/img/portfolio-image.png";
+import { Link } from "react-router-dom";
+
 
 class MyPortfolio extends Component {
   constructor(props) {
@@ -11,12 +13,12 @@ class MyPortfolio extends Component {
 
   render() {
     var settings = {
-      dots: true,
+      // dots: true,
       infinite: false,
       speed: 500,
       slidesToShow: 2,
       slidesToScroll: 1,
-      arrows: true,
+      arrows: false,
       responsive: [
         {
           breakpoint: 992,
@@ -49,6 +51,31 @@ class MyPortfolio extends Component {
             <Button>See All</Button>
           </div>
           <Slider {...settings}>
+            
+            <div className="d-block w-100 portfolio-box">
+              <div className="d-block w-100 image">
+                <img src={PortfolioImage} alt="" />
+              </div>
+              <div className="name">
+                <a href="#">Microservices Transformation</a>
+              </div>
+              <div className="button">
+               <Link to={'/portfolio/microservices-transformation'}> <Button><i className="fa-solid fa-arrow-right"></i></Button></Link>
+              </div>
+            </div>
+            <div className="d-block w-100 portfolio-box">
+              <div className="d-block w-100 image">
+                <img src={PortfolioImage} alt="" />
+              </div>
+              <div className="name">
+                <a href="#">SAAS Automation</a>
+              </div>
+              <div className="button">
+              <Link to={'/portfolio/saas-automation'}>
+                <Button><i className="fa-solid fa-arrow-right"></i></Button>
+              </Link>
+              </div>
+            </div>
             <div className="d-block w-100 portfolio-box">
               <div className="d-block w-100 image">
                 <img src={PortfolioImage} alt="" />
@@ -71,28 +98,8 @@ class MyPortfolio extends Component {
                 <Button><i className="fa-solid fa-arrow-right"></i></Button>
               </div>
             </div>
-            <div className="d-block w-100 portfolio-box">
-              <div className="d-block w-100 image">
-                <img src={PortfolioImage} alt="" />
-              </div>
-              <div className="name">
-                <a href="#">Microservices Transformation</a>
-              </div>
-              <div className="button">
-                <Button><i className="fa-solid fa-arrow-right"></i></Button>
-              </div>
-            </div>
-            <div className="d-block w-100 portfolio-box">
-              <div className="d-block w-100 image">
-                <img src={PortfolioImage} alt="" />
-              </div>
-              <div className="name">
-                <a href="#">SAAS Automation</a>
-              </div>
-              <div className="button">
-                <Button><i className="fa-solid fa-arrow-right"></i></Button>
-              </div>
-            </div>
+
+
           </Slider>
         </Container>
       </div>
