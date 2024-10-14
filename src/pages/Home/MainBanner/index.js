@@ -83,7 +83,7 @@ class MainBanner extends Component {
               <p>
                 {/* Hands-on DevOps Expert, 25 Years in DevSecOps Solutioning and
                 Product Development. */}
-                Writing Open DevSecOps Tools/ Frameworks to do "More in Less in Cloud"
+                Writing Open DevSecOps Tools/ Frameworks to do "More in Less with Cloud"
               </p>
             </div>
             <div className="d-inline-flex justify-content-center content-center" >
