@@ -16,6 +16,7 @@ import ContainerizationServerlessOrchestration from "./pages/Service/Containeriz
 import SecurityAndCompliance from "./pages/Service/SecurityAndCompliance";
 import MicroservicesTransformation from "./pages/Portfolio/MicroservicesTransformation";
 import SassAutomation from "./pages/Portfolio/SassAutomation";
+import SREFrameworkDevelopment from "./pages/Portfolio/SREFrameworkDevelopment";
 import Contact from "./pages/Contact";
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/service/security-and-compliance" element={<SecurityAndCompliance />} />
           <Route path="/portfolio/microservices-transformation" element={<MicroservicesTransformation />} />
           <Route path="/portfolio/saas-automation" element={<SassAutomation />} />
+          <Route path="/portfolio/sre-framework-development" element={<SREFrameworkDevelopment />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
