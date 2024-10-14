@@ -10,6 +10,11 @@ import SafeImage from "../../../assets/img/safe.png";
 import SafeImageHover from "../../../assets/img/safe-hover.png";
 import { Link } from "react-router-dom";
 
+
+
+// comm
+
+
 import MigrationAndModernization from "../../../assets/img/Migration_Modernization.png" 
 import CloudAutiomation from "../../../assets/img/Cloud_Automation.png" 
 import SRE from "../../../assets/img/Cloud_SRE (1).png" 
