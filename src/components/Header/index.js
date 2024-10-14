@@ -36,16 +36,21 @@ const Header = () => {
                   >
                     About
                   </Link>
-                  <Link
-                    to="/service/migration-modernization"
+                  <a href="#services"
+                    // to="/service/migration-modernization"
                     className={
-                      activePath === "/service/migration-modernization"
+                      activePath === "/service/migration-modernization" ||
+                      activePath ===  "/service/cloud-automation" ||
+                      activePath ===  "/service/system-reliability-engineering" ||
+                      activePath ===  "/service/cost-management-and-optimization" ||
+                      activePath ===  "/service/containerization-serverless-orchestration" ||
+                      activePath ===  "/service/security-and-compliance" 
                         ? "nav-link active"
                         : "nav-link"
                     }
                   >
-                    Service
-                  </Link>
+                    Services
+                  </a>
                 </Nav>
               </Navbar>
             </Col>
@@ -70,14 +75,15 @@ const Header = () => {
                   >
                     Resume
                   </Link>
-                  <Link
-                    to="/project"
+                  <a
+                  href="#portfolio"
+                    // to="/project"
                     className={
                       activePath === "/project" ? "nav-link active" : "nav-link"
                     }
                   >
                     Project
-                  </Link>
+                  </a>
                   <Link
                     to="/contact"
                     className={
@@ -127,7 +133,7 @@ const Header = () => {
                           : "nav-link"
                       }
                     >
-                      Service
+                      Services
                     </Link>
                     <Link
                       to="/resume"

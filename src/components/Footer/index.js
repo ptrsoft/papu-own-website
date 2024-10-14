@@ -1,15 +1,16 @@
 import React from "react";
 import { Row, Col, Container, Nav, Navbar, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
 
 const Footer = () => {
+  const navigate = useNavigate()
   return (
     <div className="footer d-block w-100 py-md-5 py-4 px-lg-5 px-2">
       <Container fluid>
         <div className="d-flex align-items-center justify-content-between pb-md-5 pb-4 mb-4 lets-connect">
           <h2>Lets Connect there</h2>
-          <Button>
+          <Button onClick={()=> navigate('/contact')}>
             Hire me <i className="fa-solid fa-arrow-right"></i>
           </Button>
         </div>
@@ -32,7 +33,7 @@ const Footer = () => {
                 experience in developing, implementing, and supporting complex
                 infrastructure and cloud services.
               </div>
-              <div className="d-block w-100 pt-4 social-icons">
+              {/* <div className="d-block w-100 pt-4 social-icons">
                 <a href="#">
                   <i className="fa-brands fa-square-facebook"></i>
                 </a>
@@ -45,7 +46,7 @@ const Footer = () => {
                 <a href="#">
                   <i className="fa-brands fa-twitter"></i>
                 </a>
-              </div>
+              </div> */}
             </Col>
             <Col lg={7} md={12}>
               <Row>
@@ -60,7 +61,7 @@ const Footer = () => {
                         About Us
                       </Link>
                       <a href="#services" className="nav-link">
-                        Service
+                        Service 
                       </a>
                       <Link to="#" className="nav-link">
                         Resume
@@ -88,7 +89,7 @@ const Footer = () => {
                   </div>
                 </Col>
                 <Col lg={5} md={12}>
-                  <div className="d-block w-100 information">
+                  {/* <div className="d-block w-100 information">
                     <h4>Get the latest information</h4>
                     <div className="d-flex w-100 align-items-center justify-content-start form">
                       <input
@@ -100,7 +101,21 @@ const Footer = () => {
                         <i className="fa-solid fa-paper-plane"></i>
                       </Button>
                     </div>
-                  </div>
+                  </div> */}
+                   <div className="d-block w-100 pt-4 social-icons">
+                <a href="#">
+                  <i  className="fa-brands fa-square-facebook"></i>
+                </a>
+                <a href="#">
+                  <i className="fa-brands fa-youtube"></i>
+                </a>
+                <a href="#">
+                  <i className="fa-brands fa-square-whatsapp"></i>
+                </a>
+                <a href="#">
+                  <i className="fa-brands fa-twitter"></i>
+                </a>
+              </div>
                 </Col>
               </Row>
             </Col>

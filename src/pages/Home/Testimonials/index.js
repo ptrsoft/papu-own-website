@@ -90,11 +90,9 @@ class Testimonials extends Component {
                 <span>5.0</span>
               </div>
               <div className="contents">
-                consectetur adipiscing elit. Sed congue interdum ligula a
-                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-                orci elementum egestas lobortis.Sed lobortis orci elementum
-                egestas lobortis.
+              Papu has a unique skill set: On the one hand, he has enterprise experience and vision, that could shape your software architecture in a way you didn't even think of. On the other hand, he is a top hands-on developer. Highly recommended!"
+
+Papu demonstrated an ability to see beyond originally intended architecture for this job to provide excellent feedback, analysis, relaying of his experience with various candidate technologies, and to suggest possibly better alternatives. He ended up being right about most of it :)
               </div>
             </div>
           </div>
@@ -118,39 +116,10 @@ class Testimonials extends Component {
                 <span>5.0</span>
               </div>
               <div className="contents">
-                consectetur adipiscing elit. Sed congue interdum ligula a
-                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-                orci elementum egestas lobortis.Sed lobortis orci elementum
-                egestas lobortis.
-              </div>
-            </div>
-          </div>
-          <div className="d-block w-100 px-2">
-            <div className="d-block w-100 testimonial-box">
-              <div className="profile">
-                <div className="image">
-                  <img src={TestimonialsImage} alt="" />
-                </div>
-                <div className="name">
-                  <strong>Papu Bhattacharya</strong>
-                  <span>DevOps Expert</span>
-                </div>
-              </div>
-              <div className="rating">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <span>5.0</span>
-              </div>
-              <div className="contents">
-                consectetur adipiscing elit. Sed congue interdum ligula a
-                dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Sed lobortis orci elementum egestas lobortis.Sed lobortis
-                orci elementum egestas lobortis.Sed lobortis orci elementum
-                egestas lobortis.
+              Working with Papu, you get something very rare on freelancing: enterprise know-how, backported to your business.
+His enterprise experience is very valuable.
+He sees the “big picture”. We started the job docker oriented, and we ended up in high availability solutions with OpenShift.I wanted only a specific job, but he gave me the solutions for a full architecture of my business, microservices oriented. And I am not talking docker only, but advanced solutions in networking, storage, software automation etc.
+And, not least, Papu is great human being, totally dedicated to the customer.
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import PapuSir from "../../../assets/img/papu-sir.png";
+import { Link } from "react-router-dom";
 
 class WhyHireMe extends Component {
   constructor(props) {
@@ -60,7 +61,9 @@ class WhyHireMe extends Component {
                 </Row>
               </div>
               <div className="d-block w-100 pt-md-5 hire-me-btn">
+                <Link to={'/contact'}>
                 <Button variant="outline-primary">Hire me</Button>
+                </Link>
               </div>
             </Col>
           </Row>
