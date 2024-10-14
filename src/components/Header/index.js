@@ -82,7 +82,7 @@ const Header = () => {
                       activePath === "/project" ? "nav-link active" : "nav-link"
                     }
                   >
-                    Project
+                    Projects
                   </a>
                   <Link
                     to="/contact"
