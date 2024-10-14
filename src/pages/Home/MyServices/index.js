@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Slider from "react-slick";
 import { Container,Modal, Row, Col, Button } from "react-bootstrap";
 import ServiceImage1 from "../../../assets/img/service-image1.png";
@@ -10,12 +10,13 @@ import SafeImage from "../../../assets/img/safe.png";
 import SafeImageHover from "../../../assets/img/safe-hover.png";
 import { Link } from "react-router-dom";
 
-import MigrationAndModernization from "../../../assets/img/Migration&Modernization.jpg" 
-import CloudAutiomation from "../../../assets/img/cloudAutomation.png" 
-import SRE from "../../../assets/img/SRE.jpg" 
+import MigrationAndModernization from "../../../assets/img/Migration_Modernization.png" 
+import CloudAutiomation from "../../../assets/img/Cloud_Automation.png" 
+import SRE from "../../../assets/img/Cloud_SRE.png" 
 import CostOptimization from "../../../assets/img/cost optimization.jpg" 
 import Serverless from "../../../assets/img/serverless.jpg" 
 import securityComplianceManagement from "../../../assets/img/security-compliance-management.jpg" 
+
 
 
 class MyServices extends Component {
@@ -36,8 +37,8 @@ class MyServices extends Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       arrows: false,
-      autoplay: true,
-      autoplaySpeed: 2000,
+      autoplay: false,
+      autoplaySpeed: 3000,
       responsive: [
         {
           breakpoint: 992,
@@ -206,7 +207,7 @@ class MyServices extends Component {
               </div>
             </div>
 
-  <div className="d-block w-100 services-box">
+  {/* <div className="d-block w-100 services-box">
               <Link
                 to="/service/cost-management-and-optimization"
                 onClick={this.handleScrollToTop}
@@ -242,9 +243,9 @@ class MyServices extends Component {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
-            <div className="d-block w-100 services-box">
+            {/* <div className="d-block w-100 services-box">
               <Link
                 to="/service/containerization-serverless-orchestration"
                 onClick={this.handleScrollToTop}
@@ -280,9 +281,9 @@ class MyServices extends Component {
                   </Button>
                 </Link>
               </div>
-            </div>
+            </div> */}
 
-            <div className="d-block w-100 services-box">
+            {/* <div className="d-block w-100 services-box">
               <Link
                 to="/service/security-and-compliance"
                 onClick={this.handleScrollToTop}
@@ -318,9 +319,7 @@ class MyServices extends Component {
                   </Button>
                 </Link>
               </div>
-            </div>
-            
-            
+            </div>     */}
           </Slider>
         </Container>
       </div>
