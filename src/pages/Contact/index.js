@@ -73,14 +73,59 @@
 
 
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap'
 
 const index = () => {
   return (
     <>
-    <div className='d-flex justify-content-center align-items-center' style={{borderRadius:12,marginBottom:12 ,background:'#f2f4f7' ,height:'60vh'}}>
-<h1>Contact Page will Be Added Soon</h1>
-    </div>
+   
+        <Container>
+        <div className="awsome-project-container d-block w-100 px-md-5 p-3 py-5">
+        <div className="d-block w-100 text-center heading">
+          Have an Awsome Project <br /> Idea? <span>Let’s Discuss</span>
+        </div>
+        </div>
+            
+            <div style={{ width:'70%',padding:'20px', borderRadius:'20px', margin:'auto' }}>
+
+            <form style={{display:'flex' , flexDirection:"column" , gap:12}}>
+
+            <div className="d-inline-flex align-items-center justify-content-start form">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Name*"
+            />
+          </div>
+
+          <div className="d-inline-flex align-items-center justify-content-start form">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Phone No*"
+              />
+          </div>
+
+          <div className="d-inline-flex align-items-center justify-content-start form">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Phone No*"
+            />
+          </div>
+          <div className="d-inline-flex align-items-center justify-content-start form">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Phone No*"
+            />
+          </div>
+
+<Button>Send</Button>
+                </form>       
+              </div>
+        </Container>
+   
     </>
   )
 }
