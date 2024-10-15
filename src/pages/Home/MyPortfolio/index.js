@@ -124,9 +124,11 @@ import { Link } from "react-router-dom";
 
 import MigrationAndModernization from "../../../assets/img/Migration_Modernization.png" 
 import CloudAutiomation from "../../../assets/img/Cloud_Automation.png" 
-import SRE from "../../../assets/img/Cloud_SRE (1).png" 
+import SRE from "../../../assets/SRE_Framework (1).png" 
+import MicroservicesTransformation from "../../../assets/img/Microservices_Transformation (1).png" 
+import SaasAuto from "../../../assets/img/SaaS_Automation (3).png" 
 
-
+import SaaSAutomation from "../../../assets/img/SaaS_Automation (1).png"
 class MyPortfolio extends Component {
   constructor(props) {
     super(props);
@@ -185,7 +187,7 @@ class MyPortfolio extends Component {
       ],
     };
     return (
-      <div id="portfolio" className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5" id="services">
+      <div  className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5" id="portfolio">
         <div className="services-bg-left">
           <img src={ServicesBgLeft} alt="" />
         </div>
@@ -197,20 +199,10 @@ class MyPortfolio extends Component {
         </div>
         <Container fluid>
           <div className="d-flex w-100 pb-5 heading">
-            <Row className="align-items-end">
-              <Col lg={8}>
-                <h2>
+          <h2>
                   My <span>Portfolios</span>
                 </h2>
-              </Col>
-              <Col lg={4}>
-                <p>
-                  If you are looking for simple, cost effective and higly
-                  reliable IT system that can supercharge your core business, I
-                  could help you always.
-                </p>
-              </Col>
-            </Row>
+            
           </div>
           <Slider {...settings} className="mb-5">
             <div className="d-block w-100 services-box">
@@ -233,7 +225,7 @@ class MyPortfolio extends Component {
                   <div className="name">SAAS Automation</div>
                   <div className="d-block image">
                     <img
-                      src={MigrationAndModernization}
+                      src={SaasAuto}
                       // src={MigrationAndModernization}
                       alt="Migration and Modernization"
                     />
@@ -272,8 +264,8 @@ class MyPortfolio extends Component {
                   <div className="name">SRE Framework Development</div>
                   <div className="d-block image">
                     <img
-                      src={CloudAutiomation}
-                      alt="Cloud Automation"
+                      src={SRE}
+                      alt="SRE Framework Developmentc:\Users\hp\Downloads\Microservices_Transformation (1).png"
                     />
                   </div>
                 </div>
@@ -312,8 +304,8 @@ class MyPortfolio extends Component {
                   <div className="name">Microservices Transformation</div>
                   <div className="d-block image">
                     <img
-                      src={SRE}
-                      alt="System Reliability Engineering"
+                      src={MicroservicesTransformation}
+                      alt="Microservices Transformation"
                     />
                   </div>
                 </div>
