@@ -28,14 +28,7 @@ const Header = () => {
                   >
                     Home
                   </Link>
-                  <Link
-                    to="/about"
-                    className={
-                      activePath === "/about" ? "nav-link active" : "nav-link"
-                    }
-                  >
-                    About
-                  </Link>
+                 
                   <a href="#services"
                     // to="/service/migration-modernization"
                     className={

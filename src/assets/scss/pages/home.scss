@@ -627,6 +627,10 @@
     padding-left: 10px;
     padding-right: 10px;
     .image {
+      img{
+        width: 100%;
+        // margin: auto;
+      }
       overflow: hidden;
       position: relative;
       border-radius: 20px;
@@ -642,9 +646,10 @@
           rgba(0, 0, 0, 0) 47.41%,
           rgba(0, 0, 0, 0.359679) 76.39%,
           rgba(0, 0, 0, 0.5) 89.23%
-        );
+          );
+        }
       }
-    }
+      // rgba(0, 0, 0, 0.379) 47.41%,
     .name {
       position: absolute;
       left: 0;
@@ -1129,6 +1134,7 @@
       }
     }
   }
+
   .portfolio-container {
     .heading {
       flex-wrap: wrap;
@@ -1136,6 +1142,7 @@
         font-size: 24px;
       }
     }
+    
     .portfolio-box {
       .name {
         a {
