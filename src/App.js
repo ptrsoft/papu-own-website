@@ -18,7 +18,6 @@ import MicroservicesTransformation from "./pages/Portfolio/MicroservicesTransfor
 import SassAutomation from "./pages/Portfolio/SassAutomation";
 import SREFrameworkDevelopment from "./pages/Portfolio/SREFrameworkDevelopment";
 import Contact from "./pages/Contact";
-import About from "./pages/About";
 function App() {
   return (
     <div className="App">
@@ -27,7 +26,6 @@ function App() {
         <Routes>
           {/* <Route path="/" element={<Navigate to="/" replace />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
           <Route path="/service/migration-modernization" element={<MigrationModernization />} />
           <Route path="/service/cloud-automation" element={<CloudAutomation />} />
           <Route path="/service/system-reliability-engineering" element={<SRE />} />

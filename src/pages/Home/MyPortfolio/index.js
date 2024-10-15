@@ -206,9 +206,9 @@ class MyPortfolio extends Component {
           </div>
           <Slider {...settings} className="mb-5">
             <div className="d-block w-100 services-box">
-              <Link
-                // to="/service/migration-modernization"
-                onClick={() => this.setModalShow(true)}
+              <Link target="_blank"
+                to="/portfolio/saas-automation"
+                onClick={this.handleScrollToTop}
                 >
                 <img
                   src={SafeImage}
@@ -226,17 +226,15 @@ class MyPortfolio extends Component {
                   <div className="d-block image">
                     <img
                       src={SaasAuto}
-                      // src={MigrationAndModernization}
-                      alt="Migration and Modernization"
+                      alt="Saas Automation"
                     />
                   </div>
                 </div>
               </Link>
               <div className="button">
-                <Link
-                 
-                  onClick={() => this.setModalShow(true)}
-                >
+                <Link target="_blank"
+                 to="/portfolio/saas-automation"
+                 onClick={this.handleScrollToTop}                >
                   <Button>
                     <i className="fa-solid fa-arrow-right"></i>
                   </Button>
@@ -244,50 +242,12 @@ class MyPortfolio extends Component {
               </div>
             </div>
 
-            <div className="d-block w-100 services-box">
-              <Link
-               
-                onClick={this.setCloudModalShow}
-              >
-                <img
-                  src={SafeImage}
-                  alt="Migration and Modernization"
-                  className="safe-img"
-                />
-                <img
-                  src={SafeImageHover}
-                  alt="Migration and Modernization"
-                  className="safe-img-hover"
-                />
-
-                <div className="d-block w-100 services-inner">
-                  <div className="name">SRE Framework Development</div>
-                  <div className="d-block image">
-                    <img
-                      src={SRE}
-                      alt="SRE Framework Developmentc:\Users\hp\Downloads\Microservices_Transformation (1).png"
-                    />
-                  </div>
-                </div>
-              </Link>
-              <div className="button">
-                <Link
-                 
-                                  onClick={this.setCloudModalShow}
-                >
-
-                  <Button>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </Button>
-                </Link>
-              </div>
-            </div>
+          
 
             <div className="d-block w-100 services-box">
-              <Link
-             
-                onClick={this.setSREModalShow}
-
+              <Link target="_blank"
+              to={'/portfolio/microservices-transformation'}
+             onClick={this.handleScrollToTop}
               >
                 <img
                   src={SafeImage}
@@ -311,10 +271,50 @@ class MyPortfolio extends Component {
                 </div>
               </Link>
               <div className="button">
-                <Link
-                // to="/service/system-reliability-engineering"
-                onClick={this.setSREModalShow}
+                <Link target="_blank"
+               to={'/portfolio/microservices-transformation'}
+               onClick={this.handleScrollToTop}
                 >
+                  <Button>
+                    <i className="fa-solid fa-arrow-right"></i>
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+
+            <div className="d-block w-100 services-box">
+              <Link target="_blank"
+             to={'/portfolio/sre-framework-development'}
+             onClick={this.handleScrollToTop}
+              >
+                <img
+                  src={SafeImage}
+                  alt="Migration and Modernization"
+                  className="safe-img"
+                />
+                <img
+                  src={SafeImageHover}
+                  alt="Migration and Modernization"
+                  className="safe-img-hover"
+                />
+
+                <div className="d-block w-100 services-inner">
+                  <div className="name">SRE Framework Development</div>
+                  <div className="d-block image">
+                    <img
+                      src={SRE}
+                      alt="SRE Framework Developmentc:\Users\hp\Downloads\Microservices_Transformation (1).png"
+                    />
+                  </div>
+                </div>
+              </Link>
+              <div className="button">
+                <Link target="_blank"
+               to={'/portfolio/sre-framework-development'}
+               onClick={this.handleScrollToTop}
+                >
+
                   <Button>
                     <i className="fa-solid fa-arrow-right"></i>
                   </Button>
