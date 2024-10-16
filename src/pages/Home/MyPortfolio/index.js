@@ -125,29 +125,97 @@ import { Link } from "react-router-dom";
 import MigrationAndModernization from "../../../assets/img/Migration_Modernization.png" 
 import CloudAutiomation from "../../../assets/img/Cloud_Automation.png" 
 import SRE from "../../../assets/SRE_Framework (1).png" 
-import MicroservicesTransformation from "../../../assets/img/Microservices_Transformation (1).png" 
+import MicroservicesTransformationimg from "../../../assets/img/Microservices_Transformation (1).png" 
 import SaasAuto from "../../../assets/img/SaaS_Automation (3).png" 
 
-import SaaSAutomation from "../../../assets/img/SaaS_Automation (1).png"
+// import SaaSAutomationImg from "../../../assets/img/SaaS_Automation (1).png"
+import SassAutomation from "../../Portfolio/SassAutomation";
+import MicroservicesTransformation from "../../Portfolio/MicroservicesTransformation";
+import SREFrameworkDevelopment from "../../Portfolio/SREFrameworkDevelopment";
+
+
+
+
+class SAASAutomationModal extends Component {
+  render() {
+    return (
+      <Modal
+        {...this.props}
+        size="xl"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+     <div>
+   <SassAutomation/>
+     </div>
+        <Modal.Footer>
+          <Button onClick={this.props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+}
+
+class MicrosoftTransmodal extends Component {
+  render() {
+    return (
+      <Modal
+        {...this.props}
+        size="xl"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+     <div>
+   <MicroservicesTransformation/>
+     </div>
+        <Modal.Footer>
+          <Button onClick={this.props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+}
+
+class SREFrameworkDevelopmentModal extends Component {
+  render() {
+    return (
+      <Modal
+        {...this.props}
+        size="xl"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+     <div>
+   <SREFrameworkDevelopment/>
+     </div>
+        <Modal.Footer>
+          <Button onClick={this.props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
+}
+
 class MyPortfolio extends Component {
   constructor(props) {
     super(props);
-    this.state = { modalShow: false, cloudModalShow: false , SREModalShow: false};
+    this.state = { 
+      cloudAutoModalShow: false ,
+      microsoftTransModalShow: false ,
+      SREFrameworkDevelopmentModalShow: false ,
+    };
 
   }
-
-  setModalShow = (show) => {
-    this.setState({ modalShow: show });
-  }; 
-   setCloudModalShow = (show) => {
-    this.setState({ cloudModalShow: show });
+  setCloudAutoModal = (show) => {
+    this.setState({ cloudAutoModalShow: show });
+  };
+   setMicrosoftModal = (show) => {
+    this.setState({ microsoftTransModalShow: show });
+  };setSREFrameworkDevelopmentModal = (show) => {
+    this.setState({ SREFrameworkDevelopmentModalShow: show });
   };
 
-  setSREModalShow = (show) => {
-    this.setState({ SREModalShow: show });
-  };
-
-
+  
   handleScrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -206,9 +274,8 @@ class MyPortfolio extends Component {
           </div>
           <Slider {...settings} className="mb-5">
             <div className="d-block w-100 services-box">
-              <Link target="_blank"
-                to="/portfolio/saas-automation"
-                onClick={this.handleScrollToTop}
+              <Link 
+               onClick={this.setCloudAutoModal}
                 >
                 <img
                   src={SafeImage}
@@ -232,9 +299,8 @@ class MyPortfolio extends Component {
                 </div>
               </Link>
               <div className="button">
-                <Link target="_blank"
-                 to="/portfolio/saas-automation"
-                 onClick={this.handleScrollToTop}                >
+                <Link                onClick={this.setCloudAutoModal}
+     >
                   <Button>
                     <i className="fa-solid fa-arrow-right"></i>
                   </Button>
@@ -245,9 +311,8 @@ class MyPortfolio extends Component {
           
 
             <div className="d-block w-100 services-box">
-              <Link target="_blank"
-              to={'/portfolio/microservices-transformation'}
-             onClick={this.handleScrollToTop}
+              <Link 
+                             onClick={this.setMicrosoftModal}
               >
                 <img
                   src={SafeImage}
@@ -264,16 +329,17 @@ class MyPortfolio extends Component {
                   <div className="name">Microservices Transformation</div>
                   <div className="d-block image">
                     <img
-                      src={MicroservicesTransformation}
+                      src={MicroservicesTransformationimg}
                       alt="Microservices Transformation"
                     />
                   </div>
                 </div>
               </Link>
               <div className="button">
-                <Link target="_blank"
-               to={'/portfolio/microservices-transformation'}
-               onClick={this.handleScrollToTop}
+                <Link
+
+onClick={this.setMicrosoftModal}
+
                 >
                   <Button>
                     <i className="fa-solid fa-arrow-right"></i>
@@ -284,9 +350,8 @@ class MyPortfolio extends Component {
 
 
             <div className="d-block w-100 services-box">
-              <Link target="_blank"
-             to={'/portfolio/sre-framework-development'}
-             onClick={this.handleScrollToTop}
+              <Link 
+              onClick={this.setSREFrameworkDevelopmentModal}
               >
                 <img
                   src={SafeImage}
@@ -310,9 +375,9 @@ class MyPortfolio extends Component {
                 </div>
               </Link>
               <div className="button">
-                <Link target="_blank"
-               to={'/portfolio/sre-framework-development'}
-               onClick={this.handleScrollToTop}
+                <Link
+                              onClick={this.setSREFrameworkDevelopmentModal}
+
                 >
 
                   <Button>
@@ -322,8 +387,20 @@ class MyPortfolio extends Component {
               </div>
             </div>
           </Slider>
+         
         </Container>
-       
+       <SAASAutomationModal
+        show={this.state.cloudAutoModalShow}
+        onHide={() => this.setCloudAutoModal(false)}
+       />
+       <MicrosoftTransmodal
+        show={this.state.microsoftTransModalShow}
+        onHide={() => this.setMicrosoftModal(false)}
+       />
+       <SREFrameworkDevelopmentModal
+        show={this.state.SREFrameworkDevelopmentModalShow}
+        onHide={() => this.setSREFrameworkDevelopmentModal(false)}
+       />
       </div>
     );
   }
