@@ -12,9 +12,10 @@ class SassAutomation extends Component {
     super(props);
     this.state = {};
   }
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
+  c
+//   omponentDidMount() {
+//     window.scrollTo(0, 0);
+//   }
 
   render() {
     return (

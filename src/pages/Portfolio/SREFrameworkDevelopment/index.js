@@ -12,9 +12,9 @@ class SREFrameworkDevelopment extends Component {
     super(props);
     this.state = {};
   }
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
+//   componentDidMount() {
+//     window.scrollTo(0, 0);
+//   }
 
   render() {
     return (
