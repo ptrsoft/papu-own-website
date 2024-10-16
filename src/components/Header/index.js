@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
 import Logo from "../../assets/img/logo.png";
+import githubLogo from "../../assets/icons/github.svg";
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
@@ -45,6 +46,19 @@ const Header = () => {
                   >
                     Services
                   </a>
+                  <a href="#portfolio"
+                    // to="/service/migration-modernization"
+                    className={
+                      activePath ===  "/portfolio" 
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                  >
+                   Portfolios
+                  </a>
+
+                  
+                  
                 </Nav>
               </Navbar>
             </Col>
@@ -62,21 +76,25 @@ const Header = () => {
               <Navbar className="justify-content-center">
                 <Nav onClick={handleNavClick}>
                   <Link
-                    to="/resume"
+                  target="_blank"
+                    to="https://github.com/ptrsoft"
                     className={
                       activePath === "/resume" ? "nav-link active" : "nav-link"
                     }
                   >
-                    Resume
+                    <span style={{display:'flex' , justifyContent:'center' , alignItems:'center' , gap:'10px'}}>
+                   Github 
+                   <img src={githubLogo} alt="" />
+                    </span>
                   </Link>
                   <a
-                  href="#portfolio"
+                  href="#blogs"
                     // to="/project"
                     className={
-                      activePath === "/project" ? "nav-link active" : "nav-link"
+                      activePath === "/blogs" ? "nav-link active" : "nav-link"
                     }
                   >
-                    Projects
+                 Blogs
                   </a>
                   <Link
                     to="/contact"

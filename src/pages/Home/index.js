@@ -6,6 +6,7 @@ import MyPortfolio from "./MyPortfolio";
 import Testimonials from "./Testimonials";
 import MyServices from "./MyServices";
 import AwsomeProject from "../../components/AwsomeProject";
+import Blogs from "./Blogs";
 
 class Home extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class Home extends Component {
         <MyWorkExperince />
         <WhyHireMe />
         <MyPortfolio />
+        <Blogs/>
         <Testimonials />
         <AwsomeProject />
       </div>
