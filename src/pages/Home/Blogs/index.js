@@ -77,58 +77,37 @@ const Blogs = () => {
     
      <div className='blog_card'>
     <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
-          <h3 >How to Start Learning React</h3>
+          <h3>More in Less-Use a Simple Content Distribution Platform for Web/Mobile Workloads</h3>
           <p>
-            React is a popular JavaScript library for building user interfaces.
-            This article will guide you through the steps to get started.
+          In the digital world, we often think that “More sugar, more sweet” applies to every scenario—more resources, more investment, more complexity....
           </p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7242617385378045954/" target='_blank'>
           <Button>Read More</Button>
+          </a>
         </div>
+
+        <div className='blog_card'>
+        <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
+        <h3 >Delivering Mobility Services Without the Heavy Investment in Mobile App Development.</h3>
+          <p>
+          In my last post “More is Less and Less is More”, I discussed how simplifying "Web App Delivery" can yeild better SLE and Cost effectiveness....
+          </p>
+          <a target='_blank' href=" https://www.linkedin.com/feed/update/urn:li:activity:7243961874101235713/">
+          <Button>Read More</Button>
+          </a>
+        </div>
+
         <div className='blog_card'>
     <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
-          <h3 >How to Start Learning React</h3>
+          <h3 >Five Q's you may need to find an answer for a Large Scale Micro-Services transformation journey.</h3>
           <p>
-            React is a popular JavaScript library for building user interfaces.
-            This article will guide you through the steps to get started.
+          Most of the organizations today understand the essence of #Micro-Services #transformation. Everybody prefers to address the complexity in...
           </p>
+          <a target='_blank' href=" https://www.linkedin.com/feed/update/urn:li:ugcPost:6605771609296994304/">
           <Button>Read More</Button>
+          </a>
         </div>
-        <div className='blog_card'>
-    <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
-          <h3 >How to Start Learning React</h3>
-          <p>
-            React is a popular JavaScript library for building user interfaces.
-            This article will guide you through the steps to get started.
-          </p>
-          <Button>Read More</Button>
-        </div>
-        <div className='blog_card'>
-    <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
-          <h3 >How to Start Learning React</h3>
-          <p>
-            React is a popular JavaScript library for building user interfaces.
-            This article will guide you through the steps to get started.
-          </p>
-          <Button>Read More</Button>
-        </div>
-        <div className='blog_card'>
-    <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
-          <h3 >How to Start Learning React</h3>
-          <p>
-            React is a popular JavaScript library for building user interfaces.
-            This article will guide you through the steps to get started.
-          </p>
-          <Button>Read More</Button>
-        </div>
-        <div className='blog_card'>
-    <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
-          <h3 >How to Start Learning React</h3>
-          <p>
-            React is a popular JavaScript library for building user interfaces.
-            This article will guide you through the steps to get started.
-          </p>
-          <Button>Read More</Button>
-        </div>
+      
 
 
         </div>    

@@ -12,7 +12,7 @@ const Footer = () => {
       <Container fluid>
         <div className="d-flex align-items-center justify-content-between pb-md-5 pb-4 mb-4 lets-connect">
           <h2>Lets Connect there</h2>
-          <Button onClick={()=> navigate('/contact')}>
+          <Button onClick={() => navigate('/contact')}>
             Hire me <i className="fa-solid fa-arrow-right"></i>
           </Button>
         </div>
@@ -28,12 +28,7 @@ const Footer = () => {
                 <span className="text show">Bhattacharya</span>
               </Link>
               <div className="d-block pt-4 about-text">
-                A very hands-on, Product - Oriented Technologist with more than
-                24 years of experience in developing several market-leading
-                SRE/DevSecOps products (Storage Essential, Network Authority,
-                SafeAccess, Appkube) from scratch. I have deep technical
-                experience in developing, implementing, and supporting complex
-                infrastructure and cloud services.
+                I have extensive project experience of AWS, Kubernetes and Cloud Automation and DevOps and SRE.I help people to do "More with Less in cloud", simplify and streamline their cloud operations. My existing Cloud Automation works would significantly reduce the time for the production delivery of your applications.
               </div>
               {/* <div className="d-block w-100 pt-4 social-icons">
                 <a href="#">
@@ -63,14 +58,16 @@ const Footer = () => {
                         About Us
                       </Link> */}
                       <a href="#services" className="nav-link">
-                        Service 
+                        Service
                       </a>
-                     
+                      <a href="#blogs" className="nav-link">
+                    Blogs
+                      </a>
                       <a href="#portfolio" className="nav-link">
-                        Project
+                      Portfolios
                       </a>
                       <Link to="https://github.com/ptrsoft" target="_blank" className="nav-link">
-                     Github
+                        Github
                       </Link>
                     </div>
                   </div>
@@ -83,7 +80,7 @@ const Footer = () => {
                         +91 99631 11687
                       </a>
                       <a href="#" className="nav-link">
-                        papu.bhat@gmail.com
+                        papu.bhattacharya@ptrtechnology.com
                       </a>
                       <a href="#" className="nav-link">
                         papu.me
@@ -105,20 +102,20 @@ const Footer = () => {
                       </Button>
                     </div>
                   </div> */}
-                   <div className="d-block w-100 pt-4 social-icons">
-                <a href="#">
-                  <i  className="fa-brands fa-square-facebook"></i>
-                </a>
-                <a href="#">
-                  <i className="fa-brands fa-youtube"></i>
-                </a>
-                <a href="#">
-                  <i className="fa-brands fa-square-whatsapp"></i>
-                </a>
-                <a href="#">
-                  <i className="fa-brands fa-twitter"></i>
-                </a>
-              </div>
+                  <div className="d-block w-100 pt-4 social-icons">
+                    <a href="https://www.facebook.com/papubhat" target="_blank">
+                      <i className="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a target="_blank" href="https://www.instagram.com/papubhattacharyapromodeagro/">
+                      <i className="fa-brands fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/papubhattacharya/">
+                      <i className="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a target="_blank" href="https://x.com/papubhattachary">
+                      <i className="fa-brands fa-twitter"></i>
+                    </a>
+                  </div>
                 </Col>
               </Row>
             </Col>
