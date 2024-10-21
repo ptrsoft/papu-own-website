@@ -75,18 +75,6 @@ const Header = () => {
             <Col lg={5} md={4} sm={8} xs={6}>
               <Navbar className="justify-content-center">
                 <Nav onClick={handleNavClick}>
-                  <Link
-                  target="_blank"
-                    to="https://github.com/ptrsoft"
-                    className={
-                      activePath === "/resume" ? "nav-link active" : "nav-link"
-                    }
-                  >
-                    <span style={{display:'flex' , justifyContent:'center' , alignItems:'center' , gap:'10px'}}>
-                   Github 
-                   <img src={githubLogo} alt="" />
-                    </span>
-                  </Link>
                   <a
                   href="#blogs"
                     // to="/project"
@@ -103,6 +91,18 @@ const Header = () => {
                     }
                   >
                     Contact
+                  </Link>
+                  <Link
+                  target="_blank"
+                    to="https://github.com/ptrsoft"
+                    className={
+                      activePath === "/resume" ? "nav-link active" : "nav-link"
+                    }
+                  >
+                    <span style={{display:'flex' , justifyContent:'center' , alignItems:'center' , gap:'10px'}}>
+                   Github 
+                   <img src={githubLogo} alt="" />
+                    </span>
                   </Link>
                 </Nav>
               </Navbar>

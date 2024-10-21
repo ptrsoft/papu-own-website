@@ -1,133 +1,75 @@
-// import React, { Component } from "react";
-// import { Button, Container } from "react-bootstrap";
-// import AwsomeProject from "../../components/AwsomeProject";
+import React from 'react';
+import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 
-
-// class Contact extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {};
-//   }
-//   componentDidMount() {
-//     window.scrollTo(0, 0);
-//   }
-
-//   render() {
-//     return (
-//         <div className="awsome-project-container d-block w-100 px-md-5 p-3 py-5">
-//         <div className="d-block w-100 text-center heading">
-//         Let’s Build Something Together<br /> <span>Get in Touch for SAAS Solutions</span>
-//         </div>
-
-//         <div className="d-flex rlex-wrap-wrap flex-direction-column">
-//           <div className="d-inline-flex  align-items-center justify-content-start form">
-//             <span>
-//               <i className="fa-solid fa-envelope"></i>
-//             </span>
-//             <input
-//               type="text"
-//               className="form-control"
-//               placeholder="First Name"
-//             />
-//           </div>
-
-//           <div className="d-inline-flex align-items-center justify-content-start form">
-//             <span>
-//               <i className="fa-solid fa-envelope"></i>
-//             </span>
-//             <input
-//               type="text"
-//               className="form-control"
-//               placeholder="Last Name"
-//             />
-//           </div>
-//           <div className="d-inline-flex align-items-center justify-content-start form">
-//             <span>
-//               <i className="fa-solid fa-envelope"></i>
-//             </span>
-//             <input
-//               type="text"
-//               className="form-control"
-//               placeholder="Number"
-//             />
-//           </div>
-
-//           <div className="d-inline-flex align-items-center justify-content-start form">
-//             <span>
-//               <i className="fa-solid fa-envelope"></i>
-//             </span>
-//             <input
-//               type="text"
-//               className="form-control"
-//               placeholder="Email Address"
-//             />
-//             <Button>Send</Button>
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Contact;
-
-
-import React from 'react'
-import { Button, Container } from 'react-bootstrap'
-
-const index = () => {
+const Contact = () => {
   return (
-    <>
-   
-        <Container>
-        <div className="awsome-project-container d-block w-100 px-md-5 p-3 py-5">
-        <div className="d-block w-100 text-center heading">
+    <Container className="py-5">
+      <div className="awsome-project-container text-center mb-4">
+      <div className="d-block w-100 text-center heading">
           Have an Awsome Project <br /> Idea? <span>Let’s Discuss</span>
-        </div>
-        </div>
-            
-            <div style={{ width:'70%',padding:'20px', borderRadius:'20px', margin:'auto' }}>
+        </div>       
+      </div>
 
-            <form style={{display:'flex' , flexDirection:"column" , gap:12}}>
-
-            <div className="d-inline-flex align-items-center justify-content-start form">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Name*"
-            />
-          </div>
-
-          <div className="d-inline-flex align-items-center justify-content-start form">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Phone No*"
+      <div className="form-container" style={{ maxWidth: '600px', margin: 'auto' }}>
+        <Form>
+          <Row className="mb-3">
+            <Col xs={12}>
+              <Form.Control
+                type="text"
+                placeholder="Full Name*"
+                required
               />
-          </div>
+            </Col>
+          </Row>
 
-          <div className="d-inline-flex align-items-center justify-content-start form">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Phone No*"
-            />
-          </div>
-          <div className="d-inline-flex align-items-center justify-content-start form">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Phone No*"
-            />
-          </div>
+          <Row className="mb-3">
+            <Col xs={12}>
+              <Form.Control
+                type="email"
+                placeholder="Email Address*"
+                required
+              />
+            </Col>
+          </Row>
 
-<Button>Send</Button>
-                </form>       
-              </div>
-        </Container>
-   
-    </>
-  )
-}
+          <Row className="mb-3">
+            <Col xs={12}>
+              <Form.Control
+                type="tel"
+                placeholder="Phone Number*"
+                required
+              />
+            </Col>
+          </Row>
 
-export default index
+          <Row className="mb-3">
+            <Col xs={12}>
+              <Form.Control
+                type="text"
+                placeholder="Company Name*"
+                required
+              />
+            </Col>
+          </Row>
+
+          <Row className="mb-4">
+            <Col xs={12}>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                placeholder="Message*"
+                required
+              />
+            </Col>
+          </Row>
+
+          <Button variant="primary" type="submit" className="w-100">
+            Send
+          </Button>
+        </Form>
+      </div>
+    </Container>
+  );
+};
+
+export default Contact;

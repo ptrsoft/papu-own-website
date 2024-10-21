@@ -9,7 +9,7 @@ class AwsomeProject extends Component {
 
   render() {
     return (
-      <div className="awsome-project-container d-block w-100 px-md-5 p-3 py-5">
+      <div className="awsome-project-container  d-block w-100 px-md-5 p-3 py-5">
         <div className="d-block w-100 text-center heading">
           Have an Awsome Project <br /> Idea? <span>Let’s Discuss</span>
         </div>
