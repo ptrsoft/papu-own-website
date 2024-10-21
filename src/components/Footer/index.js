@@ -2,6 +2,8 @@ import React from "react";
 import { Row, Col, Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
+import githubLogo from "../../assets/icons/github.svg";
+
 
 const Footer = () => {
   const navigate = useNavigate()
@@ -57,18 +59,19 @@ const Footer = () => {
                       <Link to="/" className="nav-link">
                         Home
                       </Link>
-                      <Link to="#" className="nav-link">
+                      {/* <Link to="#" className="nav-link">
                         About Us
-                      </Link>
+                      </Link> */}
                       <a href="#services" className="nav-link">
                         Service 
                       </a>
-                      <Link to="#" className="nav-link">
-                        Resume
-                      </Link>
+                     
                       <a href="#portfolio" className="nav-link">
                         Project
                       </a>
+                      <Link to="https://github.com/ptrsoft" target="_blank" className="nav-link">
+                     Github
+                      </Link>
                     </div>
                   </div>
                 </Col>
