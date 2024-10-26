@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import TestimonialsImage from "../../../assets/img/testimonials-image.jpg";
+import TestimonialsImage from "../../../assets/img/testimonialImage.png";
 import TestimonialsIcon1 from "../../../assets/img/testimonials-heading-icon2.png";
 import TestimonialsIcon2 from "../../../assets/img/testimonials-heading-icon1.png";
 
