@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
+import { PopupWidget } from "react-calendly";
 
 class AwsomeProject extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      submissionStatus: "", // New state variable
+    };
   }
 
   onSubmit = async (event) => {
@@ -23,13 +26,14 @@ class AwsomeProject extends Component {
       const data = await response.json();
 
       if (data.success) {
-        // Optionally show a success message or reset the form
+        this.setState({ submissionStatus: "We will contact you soon!" }); // Update state on success
         event.target.reset();
       } else {
-        console.log("Error", data);
+        this.setState({ submissionStatus: "Error: Please try again." }); // Update state on error
       }
     } catch (error) {
       console.error("Fetch error:", error);
+      this.setState({ submissionStatus: "Error: Please try again." }); // Handle fetch error
     }
   };
 
@@ -68,14 +72,37 @@ class AwsomeProject extends Component {
                 required
               />
             </div>
-            <Button type="submit" className="form"> {/* Added type="submit" */}
+            <Button type="submit" className="form">
               Send
+            </Button>
+            <Button type="submit" className="form">
+              Book a Meeting
             </Button>
           </div>
         </form>
+        <PopupWidget
+        url="https://calendly.com/papu-bhattacharya-ptrtechnology/30min"
+        
+        /*
+         * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
+         * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
+         */
+        rootElement={document.getElementById("root")}
+        text="schedule a Meeting!"
+        textColor="#ffffff"
+        color="#fd853a"
+      />
+
+        {/* Submission Status Message */}
+        {this.state.submissionStatus && (
+          <div className="submission-status text-center mt-3">
+            {this.state.submissionStatus}
+          </div>
+        )}
       </div>
     );
   }
 }
 
 export default AwsomeProject;
+ 
