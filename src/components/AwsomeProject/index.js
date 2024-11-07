@@ -75,24 +75,10 @@ class AwsomeProject extends Component {
             <Button type="submit" className="form">
               Send
             </Button>
-            <Button type="submit" className="form">
-              Book a Meeting
-            </Button>
+          
           </div>
         </form>
-        <PopupWidget
-        url="https://calendly.com/papu-bhattacharya-ptrtechnology/30min"
-        
-        /*
-         * react-calendly uses React's Portal feature (https://reactjs.org/docs/portals.html) to render the popup modal. As a result, you'll need to
-         * specify the rootElement property to ensure that the modal is inserted into the correct domNode.
-         */
-        rootElement={document.getElementById("root")}
-        text="schedule a Meeting!"
-        textColor="#ffffff"
-        color="#fd853a"
-      />
-
+       
         {/* Submission Status Message */}
         {this.state.submissionStatus && (
           <div className="submission-status text-center mt-3">
