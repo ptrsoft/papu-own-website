@@ -25,24 +25,15 @@ function App() {
   
   return (
     <div className="App">
-      <div style={{ position: "fixed", top: "10px", right: "10px", zIndex: 1000 }}>
+
       <PopupWidget
         url="https://calendly.com/papu-bhattacharya-ptrtechnology/30min"
         rootElement={document.getElementById("root")}
         text="Schedule a Meeting!"
         textColor="#ffffff"
         color="#fd853a"
-        pageSettings={{
-          backgroundColor: 'ffffff',
-          hideEventTypeDetails: false,
-          hideLandingPageDetails: false,
-          primaryColor: '00a2ff',
-          textColor: '4d5055'
-        }}
-
        
       />
-    </div>
       <Router>
         <Header />
         <Routes>
