@@ -33,9 +33,9 @@ class WhyHireMe extends Component {
                   Why <span>Hire me</span>?
                 </h2>
                 <p>
-                  Consistently delivered multiple production ready DevOps
-                  solutions that reduced cloud capex 25-50%,Opex 50-60% and
-                  Product SLE's by 60%.
+                  Consistently delivered production-grade AI solutions that turn
+                  complex business problems into measurable business impact,
+                  reducing cost 25-60% while improving reliability.
                 </p>
               </div>
               <div className="d-block w-100 projects">

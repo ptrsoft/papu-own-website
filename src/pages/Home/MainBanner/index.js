@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import MainPapuSir from "../../../assets/img/main-papu-sir.png";
+import MainPapuSir from "../../../assets/img/my-photo.png";
 import HelloVector from "../../../assets/img/hello-vector.png";
 import MainBannerHeadingVector from "../../../assets/img/main-banner-heading-vector.png";
 import AnimateVector from "../../../assets/img/main-papu-sir-animate.png";
@@ -67,7 +67,7 @@ class MainBanner extends Component {
               </span>
             </div>
             <h2 className={isHovered ? "scrolled" : ""}>
-              I’m <span>Papu Bhattacharya</span>, <br /> DevOps Expert
+              I’m <span>Papu Bhattacharya</span>, <br /> Forward Deployed Engineer (FDE)
               <div className="heading-vector">
                 <img src={MainBannerHeadingVector} alt="" />
               </div>
@@ -81,9 +81,7 @@ class MainBanner extends Component {
             >
               <i className="fa-solid fa-quote-left"></i>
               <p>
-                {/* Hands-on DevOps Expert, 25 Years in DevSecOps Solutioning and
-                Product Development. */}
-                Writing Open DevSecOps Tools/ Frameworks to do "More in Less with Cloud"
+                I turn complex business problems into production-grade AI solutions with measurable business impact.
               </p>
             </div>
             <div className="d-inline-flex justify-content-center content-center" >
@@ -121,13 +119,7 @@ class MainBanner extends Component {
                 <i className="fa-solid fa-star"></i>
               </div>
               <div className="years">25 Years</div>
-              <div style={{textAlign:'end'}} className="experince">in DevOps Product Development
-
-
-
-
-
-</div>
+              <div style={{textAlign:'end'}} className="experince">Turning business problems into production-grade AI</div>
             </div>
           </div>
         </Container>

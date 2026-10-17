@@ -23,12 +23,12 @@ const Footer = () => {
                 to="/"
                 className="logo w-100 d-flex justify-content-start align-items-center"
               >
-                <img src={Logo} alt="I’m Papu Bhattacharya, DevOps Expert" />
+                <img src={Logo} alt="Papu Bhattacharya — Forward Deployed Engineer (FDE)" />
                 <span className="text">Papu</span>
                 <span className="text show">Bhattacharya</span>
               </Link>
               <div className="d-block pt-4 about-text">
-                I have extensive project experience of AWS, Kubernetes and Cloud Automation and DevOps and SRE.I help people to do "More with Less in cloud", simplify and streamline their cloud operations. My existing Cloud Automation works would significantly reduce the time for the production delivery of your applications.
+                Forward Deployed Engineer who turns complex business problems into production-grade AI solutions with measurable business impact. I partner closely with teams to design, build, and ship AI that moves the needle on real business outcomes.
               </div>
               {/* <div className="d-block w-100 pt-4 social-icons">
                 <a href="#">

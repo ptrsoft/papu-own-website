@@ -61,7 +61,7 @@ class Testimonials extends Component {
               <span className="right-top-icon">
                 <img src={TestimonialsIcon1} alt="" />
               </span>
-              I help people to achieve "More with less in cloud", i always<br /> provided simple but effective solutions.
+              I help people turn complex business problems into production-grade AI solutions,<br /> always delivering simple but effective outcomes with measurable impact.
               <span className="left-bottom-icon">
                 <img src={TestimonialsIcon2} alt="" />
               </span>
@@ -90,8 +90,8 @@ class Testimonials extends Component {
                 <span>5.0</span>
               </div>
               <div className="contents">
-              Papu has a unique skill set: On the one hand, he has enterprise experience and vision, that could shape your software architecture in a way you didn't even think of. On the other hand, he is a top hands-on developer. Highly recommended!
-              Papu demonstrated an ability to see beyond originally intended architecture for this job to provide excellent feedback, analysis, relaying of his experience with various candidate technologies, and to suggest possibly better alternatives. He ended up being right about most of it :)
+              Papu has a unique skill set: on the one hand, he has the enterprise experience and vision to shape an AI solution in a way you didn't even think of. On the other hand, he is a top hands-on engineer. Highly recommended!
+              He consistently saw beyond the originally intended approach, provided excellent analysis of candidate technologies, and suggested better alternatives that delivered real business impact. He ended up being right about most of it :)
               </div>
             </div>
           </div>
@@ -115,13 +115,13 @@ class Testimonials extends Component {
                 <span>5.0</span>
               </div>
               <div className="contents">
-              Working with Papu, you get something very rare on freelancing: enterprise know-how, backported to your business.
+              Working with Papu, you get something very rare: enterprise know-how, applied directly to your business problem.
 
-His enterprise experience is very valuable.
+His experience turning ideas into production-grade AI is very valuable.
 
-He sees the “big picture”. We started the job docker oriented, and we ended up in high availability solutions with OpenShift.I wanted only a specific job, but he gave me the solutions for a full architecture of my business, microservices oriented. And I am not talking docker only, but advanced solutions in networking, storage, software automation etc.
+He sees the "big picture". We started with a narrow request and ended up with a full AI solution architecture for my business. And I am not talking about a single model only, but end-to-end solutions across data pipelines, evaluation, and reliable production delivery.
 
-And, not least, Papu is great human being, totally dedicated to the customer.
+And, not least, Papu is a great human being, totally dedicated to the customer.
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ And, not least, Papu is great human being, totally dedicated to the customer.
                 <span>5.0</span>
               </div>
               <div className="contents">
-              Papu has proved to be an freelancing top-performer. Very skilled and very dedicated to implement my questions. His communication was even better. I asked work on some issues which were very hard, some others were the wrong way to solve the problem. Papu has worked very hard on the difficult issues and has given good feedback and advice where the questions were the wrong direction. The result has been very good. Would highly recommend to anyone else.
+              Papu has proved to be a top performer. Very skilled and very dedicated to solving the real problem. His communication was even better. Some of the challenges were genuinely hard, and some of my initial ideas were the wrong way to approach them. Papu worked hard on the difficult parts and gave honest feedback when my direction needed rethinking. The result was production-grade and delivered clear business value. Would highly recommend to anyone else.
               </div>
             </div>
           </div>
@@ -175,7 +175,7 @@ And, not least, Papu is great human being, totally dedicated to the customer.
                 <span>5.0</span>
               </div>
               <div className="contents">
-              I really enjoy working with Papu, mainly because he's got all the things right that I as a client find important: his responsiveness is always within a few hours at most, he's transparent, pro-active and doesn't settle for anything less than a very happy customer. Apart from that he's just a pleasant guy who knows how to do business: honest and reasonable. Way to go!
+              I really enjoy working with Papu, mainly because he's got all the things right that I as a client find important: his responsiveness is always within a few hours at most, he's transparent, proactive and doesn't settle for anything less than a very happy customer. On top of that he knows how to translate a business problem into a working AI solution: honest, reasonable, and focused on impact. Way to go!
               </div>
             </div>
           </div>
@@ -200,7 +200,7 @@ And, not least, Papu is great human being, totally dedicated to the customer.
                 <span>5.0</span>
               </div>
               <div className="contents">
-              Papu is the expert of Linux system. You will be surprised by how good he is and how efficient the team works. I will be recommending him to everyone that needs system service and reliability engineering. Great guy to work with.
+              Papu is an expert at building reliable, production-grade systems. You will be surprised by how good he is and how efficiently the team works. I will be recommending him to everyone that needs AI solutions and reliability engineering. Great guy to work with.
               </div>
             </div>
           </div>
@@ -225,7 +225,7 @@ And, not least, Papu is great human being, totally dedicated to the customer.
                 <span>5.0</span>
               </div>
               <div className="contents">
-              Papu is an amazing person, very skilled and knows exactly what he is doing. We will definitely re-hire him if our needs so require.
+              Papu is an amazing person, very skilled and knows exactly what he is doing when it comes to delivering AI solutions with real business impact. We will definitely re-hire him if our needs so require.
               </div>
             </div>
           </div>

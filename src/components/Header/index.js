@@ -67,7 +67,7 @@ const Header = () => {
                 to="/"
                 className="logo w-100 d-flex justify-content-center align-items-center"
               >
-                <img src={Logo} alt="I’m Papu Bhattacharya, DevOps Expert" />
+                <img src={Logo} alt="Papu Bhattacharya — Forward Deployed Engineer (FDE)" />
                 <span className="text">Papu</span>
                 <span className="text show">Bhattacharya</span>
               </Link>
@@ -113,7 +113,7 @@ const Header = () => {
           <Row className="align-items-center">
             <Col md={8} sm={8} xs={8}>
               <Link to="/" className="logo w-100 d-flex">
-                <img src={Logo} alt="I’m Papu Bhattacharya, DevOps Expert" />
+                <img src={Logo} alt="Papu Bhattacharya — Forward Deployed Engineer (FDE)" />
               </Link>
             </Col>
             <Col md={4} sm={4} xs={4}>

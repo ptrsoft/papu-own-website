@@ -31,9 +31,9 @@ class MyWorkExperince extends Component {
               <div className="d-block w-100 experince-right">
                 <h3>Chief Technology Officer (CTO)</h3>
                 <p>
-                  Did lead a 50+ dev team to develop a cross cloud SRE platform
+                  Led a 50+ engineer team building a cross-cloud AI/SRE platform
                   that reduced cloud capex 25%, Opex 50% and improved product
-                  SLE's 30%, served some premium customers like US Defence.
+                  SLE's 30%, serving premium customers like US Defence.
                 </p>
               </div>
             </Col>
@@ -77,7 +77,7 @@ class MyWorkExperince extends Component {
                 <h3>Consultant Technologist/Architect</h3>
                 <p>
                   Associated with Trilogy Inc, for multiple product development
-                  and DevOps consulting projects.
+                  and AI/solutions consulting projects.
                 </p>
               </div>
             </Col>
