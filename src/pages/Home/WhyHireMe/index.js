@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import PapuSir from "../../../assets/img/papu-sir.png";
+import PapuSir from "../../../assets/img/whyhireme.png";
 import { Link } from "react-router-dom";
 
 class WhyHireMe extends Component {

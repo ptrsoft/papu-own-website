@@ -3,7 +3,6 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import MainPapuSir from "../../../assets/img/my-photo.png";
 import HelloVector from "../../../assets/img/hello-vector.png";
 import MainBannerHeadingVector from "../../../assets/img/main-banner-heading-vector.png";
-import AnimateVector from "../../../assets/img/main-papu-sir-animate.png";
 import { Link } from "react-router-dom";
 
 class MainBanner extends Component {
@@ -102,9 +101,7 @@ class MainBanner extends Component {
                 </Button>
                 </Link>
               </div>
-              <div className={`animate ${isHovered ? "scrolled" : ""}`}>
-                <img src={AnimateVector} alt="" />
-              </div>
+
             </div>
             <div
               className={`d-inline-flex content-right ${

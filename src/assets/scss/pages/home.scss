@@ -337,6 +337,28 @@
             background-color: rgba(158, 157, 157, 0.3);
           }
         }
+        // Icon-based service card (replaces the raster image).
+        .image.service-icon-wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 260px;
+          padding-top: 0;
+          .service-icon {
+            position: relative;
+            z-index: 2;
+            font-size: 110px;
+            line-height: 1;
+            color: #ffffff;
+            transition: transform 0.3s ease, color 0.3s ease;
+          }
+        }
+      }
+      &:hover {
+        .image.service-icon-wrap .service-icon {
+          color: #fd853a;
+          transform: scale(1.08);
+        }
       }
     }
 
@@ -495,6 +517,9 @@
     img {
       position: relative;
       z-index: 1;
+      // Trim the PNG's faint 1px edge pixels that otherwise read as a thin
+      // dark outline against the light section background.
+      clip-path: inset(2px);
     }
     &:hover {
       .circles {

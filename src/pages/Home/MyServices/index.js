@@ -1,8 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Slider from "react-slick";
-import { Container,Modal, Row, Col, Button } from "react-bootstrap";
-import ServiceImage1 from "../../../assets/img/service-image1.png";
-import ServiceImage2 from "../../../assets/img/service-image2.png";
+import { Container, Modal, Row, Col, Button } from "react-bootstrap";
 import ServicesBgLeft from "../../../assets/img/services-bg-left.png";
 import ServicesBgCenter from "../../../assets/img/services-bg-center.png";
 import ServicesBgRight from "../../../assets/img/services-bg-right.png";
@@ -10,227 +8,169 @@ import SafeImage from "../../../assets/img/safe.png";
 import SafeImageHover from "../../../assets/img/safe-hover.png";
 import { Link } from "react-router-dom";
 
+// The four key services. Each card renders a Font Awesome icon (FA 6.6.0 is
+// loaded globally in styles.scss) instead of a raster image, so icons always
+// match the service and stay crisp at any size.
+const SERVICES = [
+  {
+    key: "fde-training",
+    name: "FDE Training",
+    icon: "fa-chalkboard-user",
+  },
+  {
+    key: "ontology-ai-automation",
+    name: "Ontology Powered AI Automation",
+    icon: "fa-diagram-project",
+  },
+  {
+    key: "agent-engineering",
+    name: "Agent Engineering",
+    icon: "fa-robot",
+  },
+  {
+    key: "ai-ops",
+    name: "AI Ops",
+    icon: "fa-gauge-high",
+  },
+];
 
-
-import MigrationAndModernization from "../../../assets/img/Migration_Modernization.png" 
-import CloudAutiomation from "../../../assets/img/Cloud_Automation.png" 
-import SRE from "../../../assets/img/Cloud_SRE (1).png" 
-import CostOptimization from "../../../assets/img/cost optimization.jpg" 
-import Serverless from "../../../assets/img/serverless.jpg" 
-import securityComplianceManagement from "../../../assets/img/security-compliance-management.jpg" 
-
-
-class MigrationAndModernizationModal extends Component {
+// Reusable detail modal shell so every service modal looks consistent.
+class ServiceModal extends Component {
   render() {
+    const { icon, title, titleAccent, intro, bullets, closing, ...rest } =
+      this.props;
     return (
       <Modal
-        {...this.props}
+        {...rest}
         size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-     <div>
-     <div className="main-container d-block w-100 px-lg-5 px-md-3 px-2">
-        <Container fluid>
-          <div className="d-block w-100 text-start pb-4 pt-4 main-heading">
-            Applied <span>AI Solutioning</span>
+        <div>
+          <div className="main-container d-block w-100 px-lg-5 px-md-3 px-2">
+            <Container fluid>
+              <div className="d-flex align-items-center gap-3 pb-4 pt-4 main-heading">
+                {icon ? (
+                  <i
+                    className={`fa-solid ${icon}`}
+                    style={{ color: "#fd853a", fontSize: 40 }}
+                  ></i>
+                ) : null}
+                <span style={{ marginLeft: 12 }}>
+                  {title} <span>{titleAccent}</span>
+                </span>
+              </div>
+              <div className="d-block w-100 service-contents">
+                <div className="d-block w-100 mb-4 content">
+                  <p>{intro}</p>
+                </div>
+                <div className="d-block w-100 mb-4 content">
+                  <h4 className="d-block w-100 pb-3 mb-3">Key services include:</h4>
+                  <ul>
+                    {bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="d-block w-100 mb-4 content">
+                  <p>{closing}</p>
+                </div>
+              </div>
+            </Container>
           </div>
-          {/* <div className="d-block w-100 text-center pb-5 service-banner"> */}
-            {/* <img src={ServiceImage} alt="" /> */}
-          {/* </div> */}
-          <div className="d-block w-100 service-contents">
-           
-            <div className="d-block w-100 mb-4 content">
-            <p>Whether you're exploring where AI can move the needle or scaling a proven idea, I partner with your teams to turn complex business problems into production-grade AI solutions with measurable business impact.</p>
-             
-            </div>
-            <div className="d-block w-100 mb-4 content">
-              <h4 className="d-block w-100 pb-3 mb-3">key services includes:
-              </h4>
-            <ul>
-              <li>AI opportunity discovery and solution design</li>
-              <li>Rapid proof-of-concept to production delivery
-              </li>
-              <li>Business-aligned AI roadmaps and success metrics
-              </li>
-              <li>Human-in-the-loop and decision-support systems
-              </li>
-              <li>Integration of AI into existing products and workflows
-              </li>
-            </ul>
-            </div>
-            <div className="d-block w-100 mb-4 content">
-              <h4 className="d-block w-100 pb-3 mb-3">Accelerators</h4>
-              <p>Please look at my Opensource Projects
-              </p>
-           <ol>
-            <li>Appblocks technology that reduces enterprise product development or AI integration effort by 60% <br /> (Link to  <a target="_blank" href="https://github.com/ptrsoft#appblocks-framework">https://github.com/ptrsoft#appblocks-framework</a>  )</li>
-            <li> A cloudnative Automation framework that reduces Opex by 50% <br />
-            (Link to <a target="_blank" href="https://github.com/ptrsoft#automation-framework"> https://github.com/ptrsoft#automation-framework</a>)</li>
-           </ol>
-           <p>Ready to put AI to work on your toughest business problems? Let’s connect and discuss how I can help your business thrive.</p>
-            </div>
-          
-            
-          </div>
-        </Container>
-        {/* <AwsomeProject /> */}
-      </div>
-     </div>
+        </div>
         <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
+          <Button onClick={rest.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     );
   }
 }
 
-class CloudAutomationModal extends Component {
-  render() {
-    return (
-      <Modal
-        {...this.props}
-        size="xl"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-     <div>
-     <div className="main-container d-block w-100 px-lg-5 px-md-3 px-2">
-        <Container fluid>
-          <div className="d-block w-100 text-start pb-4 pt-4 main-heading">
-          GenAI / LLM <span>Systems in Production</span>
-          </div>
-          {/* <div className="d-block w-100 text-center pb-5 service-banner"> */}
-            {/* <img src={ServiceImage} alt="" /> */}
-          {/* </div> */}
-          <div className="d-block w-100 service-contents">
-           
-            <div className="d-block w-100 mb-4 content">
-<p>I design and ship GenAI and LLM systems that are reliable in production — grounded on your data, measured for quality, and built to control inference cost at scale.</p>             
-            </div>
-            <div className="d-block w-100 mb-4 content">
-              <h4 className="d-block w-100 pb-3 mb-3">key services includes:
-              </h4>
-            <ul>
-             <li>Retrieval-augmented generation (RAG) pipelines
-             </li>
-             <li>LLM evaluation and guardrails
-             </li>
-             <li>Inference cost and latency control
-             </li>
-            </ul>
-            </div>
-            <div className="d-block w-100 mb-4 content">
-              <h4 className="d-block w-100 pb-3 mb-3">Accelerators</h4>
-           <ul>
-            <li> A cloudnative Automation framework that reduces Opex by 50% <br />
-            (Link to <a target="_blank" href="https://github.com/ptrsoft#automation-framework"> https://github.com/ptrsoft#automation-framework)</a></li>
-            <li> An observability framework that autodiscovers services and autoprovisions dashboards and alerts — now extended to monitor model quality and drift <br /> 
-            (Link to <a target="_blank" href="https://github.com/ptrsoft#automation-framework">https://github.com/ptrsoft#automation-framework</a> )</li>
-            <li> A Serverless UI deployment framework that ships web and mobile AI apps in one go with 90% reduced Capex. <br />(Link to <a target="_blank" href="https://github.com/ptrsoft#automation-framework">https://github.com/ptrsoft#automation-framework</a>)</li>
-           </ul>
-           <p>Ready to take your GenAI systems to production? Let’s connect and discuss how I can transform your AI operations.</p>
-            </div>
-          
-          </div>
-        </Container>
-        {/* <AwsomeProject /> */}
-      </div>
-     </div>
-        <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-}
-
-class SREModal extends Component {
-  render() {
-    return (
-      <Modal
-        {...this.props}
-        size="xl"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-     <div>
-     <div className="main-container d-block w-100 px-lg-5 px-md-3 px-2">
-        <Container fluid>
-          <div className="d-block w-100 text-start pb-4 pt-4 main-heading">
-          AI for <span>Operations & Reliability</span> 
-          </div>
-          {/* <div className="d-block w-100 text-center pb-5 service-banner"> */}
-            {/* <img src={ServiceImage} alt="" /> */}
-          {/* </div> */}
-          <div className="d-block w-100 service-contents">
-           
-            <div className="d-block w-100 mb-4 content">
-              <p>I apply AI to operations — anomaly detection, incident prediction, and intelligent observability — so systems and the models they run stay available, performant, and resilient.</p>
-            </div>
-            <div className="d-block w-100 mb-4 content">
-              <h4 className="d-block w-100 pb-3 mb-3">key services includes:
-              </h4>
-            <ul>
-            <li>Anomaly detection and incident prediction
-            </li>
-            <li>Observability for models and services
-            </li>
-            <li>ML-Ops and model lifecycle automation
-            </li>
-            </ul>
-            </div>
-            <div className="d-block w-100 mb-4 content">
-              <h4 className="d-block w-100 pb-3 mb-3">Accelerators</h4>
-           <ul>
-            <li> A mechanism for auto-discovery of distributed microservices and auto enablement of their operation dashboards and alerting that reduces operations management effort by 70%.</li>
-            <li>Extendible AI-ops framework based on small plugin-based golang CLI tooling that increased productivity by 50%.
-            </li>
-
-           </ul>
-           <p>From data pipelines and monitoring to root-cause analysis and optimization, I provide end-to-end solutions tailored to your business needs, keeping your systems and models running smoothly, even in high-demand scenarios.</p>
-           <p>Ready to make your operations AI-driven and resilient? Let’s connect and discuss how I can help ensure your systems are always running at their best.</p>
-            </div>
-          
-          </div>
-        </Container>
-        {/* <AwsomeProject /> */}
-      </div>
-     </div>
-        <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-}
+// Content for each service's detail modal.
+const MODAL_CONTENT = {
+  "fde-training": {
+    icon: "fa-chalkboard-user",
+    title: "FDE",
+    titleAccent: "Training",
+    intro:
+      "I train engineers and teams to work as Forward Deployed Engineers — sitting with the business, framing the real problem, and shipping production-grade AI that moves a measurable metric.",
+    bullets: [
+      "Forward Deployed Engineer mindset and operating model",
+      "Problem framing: from business pain to a solvable AI problem",
+      "Hands-on build labs: prototype to production in days",
+      "Working directly with stakeholders and measuring impact",
+      "Team enablement, playbooks, and delivery templates",
+    ],
+    closing:
+      "Want to build an FDE capability inside your organization? Let's design a training program around your real use cases.",
+  },
+  "ontology-ai-automation": {
+    icon: "fa-diagram-project",
+    title: "Ontology Powered",
+    titleAccent: "AI Automation",
+    intro:
+      "I model your business as a shared ontology — entities, relationships, and rules — then drive AI automation on top of it, so decisions are grounded in your domain rather than guessed from raw text.",
+    bullets: [
+      "Domain ontology and knowledge-graph modeling",
+      "Grounding LLMs and agents on structured domain knowledge",
+      "Rule- and relationship-driven automation workflows",
+      "Mapping existing data and systems onto the ontology",
+      "Explainable, auditable AI decisions",
+    ],
+    closing:
+      "Ready to turn your domain knowledge into automation that AI can reason over? Let's connect.",
+  },
+  "agent-engineering": {
+    icon: "fa-robot",
+    title: "Agent",
+    titleAccent: "Engineering",
+    intro:
+      "I design, build, and harden AI agents that reliably use tools, call your systems, and complete multi-step tasks — with the guardrails, evaluation, and observability needed to run them in production.",
+    bullets: [
+      "Agent architecture: planning, tools, memory, and orchestration",
+      "Tool/function calling and safe integration with your APIs",
+      "Multi-agent workflows and hand-offs",
+      "Guardrails, evaluation harnesses, and human-in-the-loop",
+      "Agent observability, tracing, and cost control",
+    ],
+    closing:
+      "Want agents that actually get work done safely? Let's scope your first production agent.",
+  },
+  "ai-ops": {
+    icon: "fa-gauge-high",
+    title: "AI",
+    titleAccent: "Ops",
+    intro:
+      "I bring AI into operations and keep AI systems healthy in production — anomaly detection, incident prediction, and model/service observability so systems and the models they run stay reliable and cost-efficient.",
+    bullets: [
+      "Model and service observability, drift and quality monitoring",
+      "Anomaly detection and incident prediction",
+      "ML-Ops: model lifecycle, deployment, and rollback automation",
+      "Inference cost, latency, and reliability optimization",
+      "Automated root-cause analysis and alerting",
+    ],
+    closing:
+      "Ready to make your operations AI-driven and your AI systems resilient? Let's talk.",
+  },
+};
 
 class MyServices extends Component {
   constructor(props) {
     super(props);
-    this.state = { modalShow: false, cloudModalShow: false , SREModalShow: false};
-
+    // One open/close flag per service, keyed by service key.
+    this.state = SERVICES.reduce((acc, s) => {
+      acc[s.key] = false;
+      return acc;
+    }, {});
   }
 
-  setModalShow = (show) => {
-    this.setState({ modalShow: show });
-  }; 
-   setCloudModalShow = (show) => {
-    this.setState({ cloudModalShow: show });
-  };
-
-  setSREModalShow = (show) => {
-    this.setState({ SREModalShow: show });
-  };
-
-
-  handleScrollToTop = () => {
-    window.scrollTo(0, 0);
+  setModal = (key, show) => {
+    this.setState({ [key]: show });
   };
 
   render() {
     var settings = {
-      // dots: true,
       infinite: false,
       speed: 500,
       slidesToShow: 3,
@@ -241,29 +181,23 @@ class MyServices extends Component {
       responsive: [
         {
           breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
+          settings: { slidesToShow: 2, slidesToScroll: 1 },
         },
         {
           breakpoint: 767,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
+          settings: { slidesToShow: 2, slidesToScroll: 1 },
         },
         {
           breakpoint: 568,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
+          settings: { slidesToShow: 1, slidesToScroll: 1 },
         },
       ],
     };
     return (
-      <div className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5" id="services">
+      <div
+        className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
+        id="services"
+      >
         <div className="services-bg-left">
           <img src={ServicesBgLeft} alt="" />
         </div>
@@ -291,139 +225,43 @@ class MyServices extends Component {
             </Row>
           </div>
           <Slider {...settings} className="mb-5">
-            <div className="d-block w-100 services-box">
-              <Link
-                // to="/service/migration-modernization"
-                onClick={() => this.setModalShow(true)}
-                >
-                <img
-                  src={SafeImage}
-                  alt="Migration and Modernization"
-                  className="safe-img"
-                />
-                <img
-                  src={SafeImageHover}
-                  alt="Migration and Modernization"
-                  className="safe-img-hover"
-                />
+            {SERVICES.map((service) => (
+              <div className="d-block w-100 services-box" key={service.key}>
+                <Link onClick={() => this.setModal(service.key, true)}>
+                  <img src={SafeImage} alt={service.name} className="safe-img" />
+                  <img
+                    src={SafeImageHover}
+                    alt={service.name}
+                    className="safe-img-hover"
+                  />
 
-                <div className="d-block w-100 services-inner">
-                  <div className="name">Applied AI Solutioning</div>
-                  <div className="d-block image">
-                    <img
-                      src={MigrationAndModernization}
-                      // src={MigrationAndModernization}
-                      alt="Migration and Modernization"
-                    />
+                  <div className="d-block w-100 services-inner">
+                    <div className="name">{service.name}</div>
+                    <div className="d-block image service-icon-wrap">
+                      <i className={`fa-solid ${service.icon} service-icon`}></i>
+                    </div>
                   </div>
-                </div>
-              </Link>
-              <div className="button">
-                <Link
-                  // to="/service/migration-modernization"
-                  // onClick={this.handleScrollToTop}
-                  onClick={() => this.setModalShow(true)}
-                >
-                  <Button>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </Button>
                 </Link>
-              </div>
-            </div>
-
-            <div className="d-block w-100 services-box">
-              <Link
-                // to="/service/cloud-automation"
-                // onClick={this.handleScrollToTop}
-                onClick={this.setCloudModalShow}
-              >
-                <img
-                  src={SafeImage}
-                  alt="Migration and Modernization"
-                  className="safe-img"
-                />
-                <img
-                  src={SafeImageHover}
-                  alt="Migration and Modernization"
-                  className="safe-img-hover"
-                />
-
-                <div className="d-block w-100 services-inner">
-                  <div className="name">GenAI / LLM Systems in Production</div>
-                  <div className="d-block image">
-                    <img
-                      src={CloudAutiomation}
-                      alt="Cloud Automation"
-                    />
-                  </div>
+                <div className="button">
+                  <Link onClick={() => this.setModal(service.key, true)}>
+                    <Button>
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </Button>
+                  </Link>
                 </div>
-              </Link>
-              <div className="button">
-                <Link
-                  // to="/service/cloud-automation"
-                  // onClick={this.handleScrollToTop}
-                                  onClick={this.setCloudModalShow}
-                >
-
-                  <Button>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </Button>
-                </Link>
               </div>
-            </div>
-
-            <div className="d-block w-100 services-box">
-              <Link
-                // to="/service/system-reliability-engineering"
-                // onClick={this.handleScrollToTop}
-                onClick={this.setSREModalShow}
-
-              >
-                <img
-                  src={SafeImage}
-                  alt="Migration and Modernization"
-                  className="safe-img"
-                />
-                <img
-                  src={SafeImageHover}
-                  alt="Migration and Modernization"
-                  className="safe-img-hover"
-                />
-
-                <div className="d-block w-100 services-inner">
-                  <div className="name">AI for Operations & Reliability</div>
-                  <div className="d-block image">
-                    <img
-                      src={SRE}
-                      alt="System Reliability Engineering"
-                    />
-                  </div>
-                </div>
-              </Link>
-              <div className="button">
-                <Link
-                // to="/service/system-reliability-engineering"
-                onClick={this.setSREModalShow}
-                >
-                  <Button>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </Button>
-                </Link>
-              </div>
-            </div>
+            ))}
           </Slider>
         </Container>
-        <MigrationAndModernizationModal
-          show={this.state.modalShow}
-          onHide={() => this.setModalShow(false)}
-        />
-         <CloudAutomationModal
-          show={this.state.cloudModalShow}
-          onHide={() => this.setCloudModalShow(false)}
-        /> <SREModal
-          show={this.state.SREModalShow}
-          onHide={() => this.setSREModalShow(false)}
-        />
+
+        {SERVICES.map((service) => (
+          <ServiceModal
+            key={service.key}
+            {...MODAL_CONTENT[service.key]}
+            show={this.state[service.key]}
+            onHide={() => this.setModal(service.key, false)}
+          />
+        ))}
       </div>
     );
   }

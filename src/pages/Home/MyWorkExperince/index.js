@@ -18,6 +18,30 @@ class MyWorkExperince extends Component {
           <Row>
             <Col lg={4}>
               <div className="d-block w-100 experince-left">
+                <h3>Trilogy Inc</h3>
+                <span>June 2024 - Oct 2026</span>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="d-block w-100 h-100 text-lg-center point">
+                <span></span>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="d-block w-100 experince-right">
+                <h3>Forward Deployed Engineer (FDE)</h3>
+                <p>
+                  Worked as a Forward Deployed Engineer, turning complex
+                  business problems into production-grade AI solutions with
+                  measurable business impact — partnering directly with
+                  stakeholders from problem framing to production delivery.
+                </p>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
+              <div className="d-block w-100 experince-left">
                 <h3>Synectiks Inc</h3>
                 <span>Nov 2016 - May 2024</span>
               </div>
@@ -90,7 +114,7 @@ class MyWorkExperince extends Component {
               </div>
             </Col>
             <Col lg={2}>
-              <div className="d-block w-100 h-100 text-lg-center point last">
+              <div className="d-block w-100 h-100 text-lg-center point">
                 <span></span>
               </div>
             </Col>
@@ -102,6 +126,29 @@ class MyWorkExperince extends Component {
                   contributed toward creating a team and product from scratch
                   and thereby making to acquire by HP Lab with a price of 260
                   million $.
+                </p>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={4}>
+              <div className="d-block w-100 experince-left">
+                <h3>CMC R&D</h3>
+                <span>March 2000 - May 2004</span>
+              </div>
+            </Col>
+            <Col lg={2}>
+              <div className="d-block w-100 h-100 text-lg-center point last">
+                <span></span>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div className="d-block w-100 experince-right">
+                <h3>Engineering Lead</h3>
+                <p>
+                  Led research and development projects, driving early-stage
+                  innovation and building engineering teams and prototypes from
+                  the ground up.
                 </p>
               </div>
             </Col>
