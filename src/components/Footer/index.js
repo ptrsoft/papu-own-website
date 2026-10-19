@@ -5,8 +5,22 @@ import Logo from "../../assets/img/logo.png";
 import githubLogo from "../../assets/icons/github.svg";
 
 
+const GITHUB_URL = "https://github.com/clouderp-code";
+
 const Footer = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  // Scroll to a home-page section, navigating home first when on another route.
+  const goToSection = (id) => (e) => {
+    e.preventDefault();
+    if (window.location.pathname === "/") {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollTo: id } });
+    }
+  };
+
   return (
     <div className="footer d-block w-100 py-md-5 py-4 px-lg-5 px-2">
       <Container fluid>
@@ -57,16 +71,16 @@ const Footer = () => {
                       {/* <Link to="#" className="nav-link">
                         About Us
                       </Link> */}
-                      <a href="#services" className="nav-link">
+                      <a href="/#services" onClick={goToSection("services")} className="nav-link">
                         Service
                       </a>
-                      <a href="#blogs" className="nav-link">
+                      <a href="/#blogs" onClick={goToSection("blogs")} className="nav-link">
                     Blogs
                       </a>
-                      <a href="#portfolio" className="nav-link">
+                      <a href="/#portfolio" onClick={goToSection("portfolio")} className="nav-link">
                       Portfolios
                       </a>
-                      <Link to="https://github.com/ptrsoft" target="_blank" className="nav-link">
+                      <Link to={GITHUB_URL} target="_blank" className="nav-link">
                         Github
                       </Link>
                     </div>
@@ -82,8 +96,8 @@ const Footer = () => {
                       <a href="#" className="nav-link">
                         papu.bhattacharya@ptrtechnology.com
                       </a>
-                      <a href="#" className="nav-link">
-                        papu.me
+                      <a href="https://papulink.com" target="_blank" rel="noopener noreferrer" className="nav-link">
+                        papulink.com
                       </a>
                     </div>
                   </div>

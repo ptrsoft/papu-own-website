@@ -7,6 +7,7 @@ import Testimonials from "./Testimonials";
 import MyServices from "./MyServices";
 import AwsomeProject from "../../components/AwsomeProject";
 import Blogs from "./Blogs";
+import ScrollToSection from "./ScrollToSection";
 
 class Home extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Home extends Component {
   render() {
     return (
       <div className="main-container d-block w-100">
+        <ScrollToSection />
         <MainBanner />
         <MyServices />
         <MyWorkExperince />

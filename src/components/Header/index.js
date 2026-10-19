@@ -1,16 +1,33 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Nav, Navbar } from "react-bootstrap";
 import Logo from "../../assets/img/logo.png";
 import githubLogo from "../../assets/icons/github.svg";
 
+const GITHUB_URL = "https://github.com/clouderp-code";
+
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const activePath = location.pathname;
 
   const handleNavClick = () => {
     setExpanded(false); // Close the Navbar when a link is clicked
+  };
+
+  // Scroll to a home-page section. These sections only exist on "/", so when
+  // the user is on another route (e.g. /contact) we navigate home first and
+  // pass the target section as state; Home reads it and scrolls on mount.
+  const goToSection = (id) => (e) => {
+    e.preventDefault();
+    setExpanded(false);
+    if (activePath === "/") {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/", { state: { scrollTo: id } });
+    }
   };
 
   return (
@@ -31,28 +48,15 @@ const Header = () => {
                     Home
                   </Link>
                  
-                  <a href="#services"
-                    // to="/service/migration-modernization"
-                    className={
-                      activePath === "/service/migration-modernization" ||
-                      activePath ===  "/service/cloud-automation" ||
-                      activePath ===  "/service/system-reliability-engineering" ||
-                      activePath ===  "/service/cost-management-and-optimization" ||
-                      activePath ===  "/service/containerization-serverless-orchestration" ||
-                      activePath ===  "/service/security-and-compliance" 
-                        ? "nav-link active"
-                        : "nav-link"
-                    }
+                  <a href="/#services"
+                    onClick={goToSection("services")}
+                    className="nav-link"
                   >
                     Services
                   </a>
-                  <a href="#portfolio"
-                    // to="/service/migration-modernization"
-                    className={
-                      activePath ===  "/portfolio" 
-                        ? "nav-link active"
-                        : "nav-link"
-                    }
+                  <a href="/#portfolio"
+                    onClick={goToSection("portfolio")}
+                    className="nav-link"
                   >
                    Portfolios
                   </a>
@@ -76,11 +80,9 @@ const Header = () => {
               <Navbar className="justify-content-center">
                 <Nav onClick={handleNavClick}>
                   <a
-                  href="#blogs"
-                    // to="/project"
-                    className={
-                      activePath === "/blogs" ? "nav-link active" : "nav-link"
-                    }
+                  href="/#blogs"
+                    onClick={goToSection("blogs")}
+                    className="nav-link"
                   >
                  Blogs
                   </a>
@@ -94,10 +96,8 @@ const Header = () => {
                   </Link>
                   <Link
                   target="_blank"
-                    to="https://github.com/ptrsoft"
-                    className={
-                      activePath === "/resume" ? "nav-link active" : "nav-link"
-                    }
+                    to={GITHUB_URL}
+                    className="nav-link"
                   >
                     <span style={{display:'flex' , justifyContent:'center' , alignItems:'center' , gap:'10px'}}>
                    Github 
