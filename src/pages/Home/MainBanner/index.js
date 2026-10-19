@@ -115,8 +115,8 @@ class MainBanner extends Component {
                 <i className="fa-solid fa-star"></i>
                 <i className="fa-solid fa-star"></i>
               </div>
-              <div className="years">25 Years</div>
-              <div style={{textAlign:'end'}} className="experince">Turning business problems into production-grade AI</div>
+              <div className="years">$20M+</div>
+              <div style={{textAlign:'end'}} className="experince">Projected revenue from AI in production</div>
             </div>
           </div>
         </Container>

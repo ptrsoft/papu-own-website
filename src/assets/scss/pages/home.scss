@@ -286,12 +286,16 @@
         .name {
           display: flex;
           width: 100%;
-          padding: 30px 30px 20px;
+          padding: 24px 28px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.5);
           color: #ffffff;
-          font-size: 32px;
+          font-size: 28px;
           font-weight: 500;
-          min-height: 150px;
+          line-height: 1.2;
+          // Fixed height + vertical centering so 1-, 2- and 3-line titles all
+          // keep the icon row aligned across every card.
+          min-height: 140px;
+          align-items: center;
           cursor: pointer;
         }
         .image {
@@ -340,17 +344,104 @@
         // Icon-based service card (replaces the raster image).
         .image.service-icon-wrap {
           display: flex;
+          flex-direction: column;
           align-items: center;
-          justify-content: center;
-          min-height: 260px;
-          padding-top: 0;
+          justify-content: flex-start;
+          gap: 22px;
+          min-height: 280px;
+          // Extra bottom padding so the caption clears the round arrow button
+          // that sits in the bottom-right corner of the card.
+          padding: 40px 26px 110px;
+          // Hide the decorative grey overlays meant for a photo; they clash
+          // with a centered icon + caption layout.
+          &::before,
+          &::after {
+            display: none;
+          }
           .service-icon {
             position: relative;
             z-index: 2;
-            font-size: 110px;
+            font-size: 76px;
             line-height: 1;
             color: #ffffff;
             transition: transform 0.3s ease, color 0.3s ease;
+          }
+          // Short caption under the icon describing the service.
+          .service-caption {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+          }
+        }
+        // Portfolio case-study card body: icon + Sector/Impact meta + blurb.
+        .image.portfolio-card-body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+          min-height: 320px;
+          padding: 36px 26px 110px;
+          &::before,
+          &::after {
+            display: none;
+          }
+          .portfolio-icon {
+            position: relative;
+            z-index: 2;
+            font-size: 64px;
+            line-height: 1;
+            color: #ffffff;
+          }
+          .portfolio-meta {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            .meta-chip {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 8px 14px;
+              border-radius: 12px;
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              .meta-label {
+                font-size: 11px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                color: rgba(255, 255, 255, 0.6);
+              }
+              .meta-value {
+                font-size: 15px;
+                font-weight: 600;
+                color: #ffffff;
+              }
+              &.impact {
+                background: rgba(253, 133, 58, 0.18);
+                border-color: rgba(253, 133, 58, 0.5);
+                .meta-value {
+                  color: #fdb073;
+                }
+              }
+            }
+          }
+          .portfolio-blurb {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: 300;
           }
         }
       }

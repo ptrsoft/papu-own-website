@@ -7,24 +7,50 @@ import ServicesBgRight from "../../../assets/img/services-bg-right.png";
 import SafeImage from "../../../assets/img/safe.png";
 import SafeImageHover from "../../../assets/img/safe-hover.png";
 
-import RevSense from "../../../assets/img/case-studies/callsense.png";
-import EconetAlarm from "../../../assets/img/case-studies/econet-alarm-management.png";
-import PassiveNetwork from "../../../assets/img/case-studies/telco-noc-passive-network.png";
-import RelianceJio from "../../../assets/img/case-studies/reliance-jio.png";
-import Toyota from "../../../assets/img/case-studies/toyota.png";
-import MedFusion from "../../../assets/img/case-studies/medfusion.png";
-import IndianDefense from "../../../assets/img/case-studies/indian-defense-dr.png";
-import IndianMeteorology from "../../../assets/img/case-studies/indian-meteorology.png";
-
+// Case studies. The full document for each lives in /public/portfolios and is
+// shown in a popup PDF viewer. Sector/Impact metadata is taken straight from
+// each case-study document. Icons are Font Awesome (FA 6.6.0, loaded globally).
 const caseStudies = [
-  { title: "RevSense — AI-Powered Revenue Acceleration Platform", img: RevSense },
-  { title: "Econet Wireless — AI-Powered Alarm Management & NOC Intelligence", img: EconetAlarm },
-  { title: "Passive Network Detection & Automated Revenue Recovery", img: PassiveNetwork },
-  { title: "Reliance Jio — Hyper-Scale Real-Time Network Monitoring", img: RelianceJio },
-  { title: "Toyota Motor — Microservices & Hybrid Cloud Transformation", img: Toyota },
-  { title: "MedFusion Inc — End-to-End Cloud Resource Provisioning Automation", img: MedFusion },
-  { title: "Indian Defense — Lightweight Script-Based Disaster Recovery", img: IndianDefense },
-  { title: "Indian Meteorology Department — Intelligent Satellite Data Staging", img: IndianMeteorology },
+  {
+    key: "revsense",
+    title: "RevSense — Revenue Acceleration Platform",
+    icon: "fa-chart-line",
+    sector: "Sector-agnostic · Telco",
+    impact: "+$20M / yr revenue",
+    blurb:
+      "AI revenue-intelligence across voice, CRM, catalogue, email, meetings and social — QA, compliance, deal and campaign intelligence from every interaction.",
+    pdf: "/portfolios/revsense.pdf",
+  },
+  {
+    key: "nocsense",
+    title: "NOCSense — Network Operations Intelligence",
+    icon: "fa-tower-broadcast",
+    sector: "Telco",
+    impact: "~$1.2M / mo Opex saved",
+    blurb:
+      "Topology-aware alarm correlation and auto-remediation on 200,000 alarms/day — 95.87% noise eliminated, 70.2% of incidents auto-resolved.",
+    pdf: "/portfolios/nocsense.pdf",
+  },
+  {
+    key: "passive-network",
+    title: "Passive Network — Detection & Revenue Recovery",
+    icon: "fa-signal",
+    sector: "Telco",
+    impact: "$3.15M–$4.75M / yr",
+    blurb:
+      "Ontology-driven detection of passive network cells with revenue metering and auto-remediation — 70%+ proactive detection, 40% MTTR reduction.",
+    pdf: "/portfolios/passive-network.pdf",
+  },
+  {
+    key: "supplychain",
+    title: "SupplyChain — Supply Chain Intelligence",
+    icon: "fa-truck-fast",
+    sector: "Manufacturing",
+    impact: "$5.7M–$10.1M / yr",
+    blurb:
+      "SCOR/GS1-aligned ontology unifying Salesforce, SAP and Oracle — demand forecasting, inventory optimization and order-to-cash intelligence.",
+    pdf: "/portfolios/supplychain.pdf",
+  },
 ];
 
 class MyPortfolio extends Component {
@@ -41,41 +67,26 @@ class MyPortfolio extends Component {
 
   render() {
     var settings = {
-      // dots: true,
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       arrows: false,
       autoplay: false,
       autoplaySpeed: 3000,
       responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 767,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 568,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
+        { breakpoint: 1200, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+        { breakpoint: 992, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+        { breakpoint: 767, settings: { slidesToShow: 2, slidesToScroll: 1 } },
+        { breakpoint: 568, settings: { slidesToShow: 1, slidesToScroll: 1 } },
       ],
     };
     const { selected } = this.state;
     return (
-      <div className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5" id="portfolio">
+      <div
+        className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
+        id="portfolio"
+      >
         <div className="services-bg-left">
           <img src={ServicesBgLeft} alt="" />
         </div>
@@ -93,8 +104,8 @@ class MyPortfolio extends Component {
             </h2>
           </div>
           <Slider {...settings} className="mb-5">
-            {caseStudies.map((study, index) => (
-              <div className="d-block w-100 services-box" key={index}>
+            {caseStudies.map((study) => (
+              <div className="d-block w-100 services-box" key={study.key}>
                 <a
                   href="#portfolio"
                   onClick={(e) => {
@@ -102,11 +113,7 @@ class MyPortfolio extends Component {
                     this.setSelected(study);
                   }}
                 >
-                  <img
-                    src={SafeImage}
-                    alt={study.title}
-                    className="safe-img"
-                  />
+                  <img src={SafeImage} alt={study.title} className="safe-img" />
                   <img
                     src={SafeImageHover}
                     alt={study.title}
@@ -115,8 +122,19 @@ class MyPortfolio extends Component {
 
                   <div className="d-block w-100 services-inner">
                     <div className="name">{study.title}</div>
-                    <div className="d-block image">
-                      <img src={study.img} alt={study.title} />
+                    <div className="d-block image portfolio-card-body">
+                      <i className={`fa-solid ${study.icon} portfolio-icon`}></i>
+                      <div className="portfolio-meta">
+                        <span className="meta-chip">
+                          <span className="meta-label">Sector</span>
+                          <span className="meta-value">{study.sector}</span>
+                        </span>
+                        <span className="meta-chip impact">
+                          <span className="meta-label">Impact</span>
+                          <span className="meta-value">{study.impact}</span>
+                        </span>
+                      </div>
+                      <p className="portfolio-blurb">{study.blurb}</p>
                     </div>
                   </div>
                 </a>
@@ -137,25 +155,67 @@ class MyPortfolio extends Component {
             ))}
           </Slider>
         </Container>
+
         <Modal
           show={selected !== null}
           onHide={() => this.setSelected(null)}
           size="xl"
           aria-labelledby="contained-modal-title-vcenter"
           centered
+          dialogClassName="portfolio-modal"
         >
-          <div>
-            {selected && (
-              <img
-                src={selected.img}
-                alt={selected.title}
-                style={{ width: "100%" }}
-              />
-            )}
-          </div>
-          <Modal.Footer>
-            <Button onClick={() => this.setSelected(null)}>Close</Button>
-          </Modal.Footer>
+          {selected && (
+            <>
+              <Modal.Header closeButton>
+                <div className="d-flex align-items-center gap-3">
+                  <i
+                    className={`fa-solid ${selected.icon}`}
+                    style={{ color: "#fd853a", fontSize: 28 }}
+                  ></i>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: 20 }}>
+                      {selected.title}
+                    </div>
+                    <div style={{ fontSize: 14, color: "#667085" }}>
+                      Sector: {selected.sector} &nbsp;·&nbsp; Impact:{" "}
+                      {selected.impact}
+                    </div>
+                  </div>
+                </div>
+              </Modal.Header>
+              <Modal.Body style={{ padding: 0 }}>
+                <iframe
+                  title={selected.title}
+                  src={selected.pdf}
+                  style={{
+                    width: "100%",
+                    height: "80vh",
+                    border: "none",
+                    display: "block",
+                  }}
+                />
+              </Modal.Body>
+              <Modal.Footer>
+                <a href={selected.pdf} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    style={{
+                      backgroundColor: "#fd853a",
+                      borderColor: "#fd853a",
+                    }}
+                  >
+                    Open in new tab{" "}
+                    <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                  </Button>
+                </a>
+                <Button
+                  variant="secondary"
+                  onClick={() => this.setSelected(null)}
+                >
+                  Close
+                </Button>
+              </Modal.Footer>
+            </>
+          )}
         </Modal>
       </div>
     );

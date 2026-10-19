@@ -11,34 +11,54 @@ import { Link } from "react-router-dom";
 // The four key services. Each card renders a Font Awesome icon (FA 6.6.0 is
 // loaded globally in styles.scss) instead of a raster image, so icons always
 // match the service and stay crisp at any size.
+const FDE_PORTAL_URL = "https://fde.thenexusai.tech/";
+
 const SERVICES = [
   {
     key: "fde-training",
     name: "FDE Training",
-    icon: "fa-chalkboard-user",
+    icon: "fa-graduation-cap",
+    portalUrl: FDE_PORTAL_URL,
+    caption:
+      "Hands-on training that turns engineers into Forward Deployed Engineers who ship production AI.",
   },
   {
     key: "ontology-ai-automation",
     name: "Ontology Powered AI Automation",
-    icon: "fa-diagram-project",
+    icon: "fa-share-nodes",
+    caption:
+      "Automation grounded in a model of your business, so AI reasons over your domain — not guesses.",
   },
   {
     key: "agent-engineering",
     name: "Agent Engineering",
     icon: "fa-robot",
+    caption:
+      "Production-ready AI agents that use your tools and systems, with guardrails and observability.",
   },
   {
     key: "ai-ops",
     name: "AI Ops",
     icon: "fa-gauge-high",
+    caption:
+      "Keep systems and AI models healthy with anomaly detection, monitoring, and ML-Ops automation.",
   },
 ];
 
 // Reusable detail modal shell so every service modal looks consistent.
 class ServiceModal extends Component {
   render() {
-    const { icon, title, titleAccent, intro, bullets, closing, ...rest } =
-      this.props;
+    const {
+      icon,
+      title,
+      titleAccent,
+      intro,
+      bullets,
+      closing,
+      portalUrl,
+      portalLabel,
+      ...rest
+    } = this.props;
     return (
       <Modal
         {...rest}
@@ -64,6 +84,25 @@ class ServiceModal extends Component {
                 <div className="d-block w-100 mb-4 content">
                   <p>{intro}</p>
                 </div>
+                {portalUrl ? (
+                  <div className="d-block w-100 mb-4 content">
+                    <a
+                      href={portalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        style={{
+                          backgroundColor: "#fd853a",
+                          borderColor: "#fd853a",
+                        }}
+                      >
+                        {portalLabel || "Visit the Training Portal"}{" "}
+                        <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                      </Button>
+                    </a>
+                  </div>
+                ) : null}
                 <div className="d-block w-100 mb-4 content">
                   <h4 className="d-block w-100 pb-3 mb-3">Key services include:</h4>
                   <ul>
@@ -74,12 +113,34 @@ class ServiceModal extends Component {
                 </div>
                 <div className="d-block w-100 mb-4 content">
                   <p>{closing}</p>
+                  {portalUrl ? (
+                    <p>
+                      Learn more and enroll at{" "}
+                      <a
+                        href={portalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {portalUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                      </a>
+                      .
+                    </p>
+                  ) : null}
                 </div>
               </div>
             </Container>
           </div>
         </div>
         <Modal.Footer>
+          {portalUrl ? (
+            <a href={portalUrl} target="_blank" rel="noopener noreferrer">
+              <Button
+                style={{ backgroundColor: "#fd853a", borderColor: "#fd853a" }}
+              >
+                Go to Training Portal
+              </Button>
+            </a>
+          ) : null}
           <Button onClick={rest.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
@@ -90,11 +151,13 @@ class ServiceModal extends Component {
 // Content for each service's detail modal.
 const MODAL_CONTENT = {
   "fde-training": {
-    icon: "fa-chalkboard-user",
+    icon: "fa-graduation-cap",
     title: "FDE",
     titleAccent: "Training",
+    portalUrl: FDE_PORTAL_URL,
+    portalLabel: "Visit the FDE Training Portal",
     intro:
-      "I train engineers and teams to work as Forward Deployed Engineers — sitting with the business, framing the real problem, and shipping production-grade AI that moves a measurable metric.",
+      "I train engineers and teams to work as Forward Deployed Engineers — sitting with the business, framing the real problem, and shipping production-grade AI that moves a measurable metric. The program runs through the FDE Training Portal, a hands-on learning platform.",
     bullets: [
       "Forward Deployed Engineer mindset and operating model",
       "Problem framing: from business pain to a solvable AI problem",
@@ -106,7 +169,7 @@ const MODAL_CONTENT = {
       "Want to build an FDE capability inside your organization? Let's design a training program around your real use cases.",
   },
   "ontology-ai-automation": {
-    icon: "fa-diagram-project",
+    icon: "fa-share-nodes",
     title: "Ontology Powered",
     titleAccent: "AI Automation",
     intro:
@@ -173,12 +236,16 @@ class MyServices extends Component {
     var settings = {
       infinite: false,
       speed: 500,
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       arrows: false,
       autoplay: false,
       autoplaySpeed: 3000,
       responsive: [
+        {
+          breakpoint: 1200,
+          settings: { slidesToShow: 3, slidesToScroll: 1 },
+        },
         {
           breakpoint: 992,
           settings: { slidesToShow: 2, slidesToScroll: 1 },
@@ -239,15 +306,31 @@ class MyServices extends Component {
                     <div className="name">{service.name}</div>
                     <div className="d-block image service-icon-wrap">
                       <i className={`fa-solid ${service.icon} service-icon`}></i>
+                      {service.caption ? (
+                        <p className="service-caption">{service.caption}</p>
+                      ) : null}
                     </div>
                   </div>
                 </Link>
                 <div className="button">
-                  <Link onClick={() => this.setModal(service.key, true)}>
-                    <Button>
-                      <i className="fa-solid fa-arrow-right"></i>
-                    </Button>
-                  </Link>
+                  {service.portalUrl ? (
+                    <a
+                      href={service.portalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Open the FDE Training Portal"
+                    >
+                      <Button>
+                        <i className="fa-solid fa-arrow-right"></i>
+                      </Button>
+                    </a>
+                  ) : (
+                    <Link onClick={() => this.setModal(service.key, true)}>
+                      <Button>
+                        <i className="fa-solid fa-arrow-right"></i>
+                      </Button>
+                    </Link>
+                  )}
                 </div>
               </div>
             ))}

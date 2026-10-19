@@ -22,3 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# agent workflow scratch (not part of the site)
+.agents/
+
+# PDF case-study source originals — the served copies live in public/portfolios/
+src/portfolios/
