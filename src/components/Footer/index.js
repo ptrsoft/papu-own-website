@@ -93,8 +93,8 @@ const Footer = () => {
                       <a href="#" className="nav-link">
                         +91 99631 11687
                       </a>
-                      <a href="#" className="nav-link">
-                        papu.bhattacharya@ptrtechnology.com
+                      <a href="mailto:papu.bhattacharya@thenexusai.tech" className="nav-link">
+                        papu.bhattacharya@thenexusai.tech
                       </a>
                       <a href="https://papulink.com" target="_blank" rel="noopener noreferrer" className="nav-link">
                         papulink.com
