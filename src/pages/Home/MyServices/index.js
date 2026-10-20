@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 // loaded globally in styles.scss) instead of a raster image, so icons always
 // match the service and stay crisp at any size.
 const FDE_PORTAL_URL = "https://fde.thenexusai.tech/";
+const NEXUS_ONTOLOGY_URL = "https://thenexusai.tech/";
 
 const SERVICES = [
   {
@@ -19,6 +20,7 @@ const SERVICES = [
     name: "FDE Training",
     icon: "fa-graduation-cap",
     portalUrl: FDE_PORTAL_URL,
+    portalTitle: "FDE Training Portal",
     caption:
       "Hands-on training that turns engineers into Forward Deployed Engineers who ship production AI.",
   },
@@ -26,6 +28,8 @@ const SERVICES = [
     key: "ontology-ai-automation",
     name: "Ontology Powered AI Automation",
     icon: "fa-share-nodes",
+    portalUrl: NEXUS_ONTOLOGY_URL,
+    portalTitle: "Nexus Ontology Platform",
     caption:
       "Automation grounded in a model of your business, so AI reasons over your domain — not guesses.",
   },
@@ -56,9 +60,10 @@ class ServiceModal extends Component {
       bullets,
       closing,
       portalUrl,
-      portalLabel,
+      portalTitle,
       ...rest
     } = this.props;
+    const portalName = portalTitle || "Portal";
     return (
       <Modal
         {...rest}
@@ -97,7 +102,7 @@ class ServiceModal extends Component {
                           borderColor: "#fd853a",
                         }}
                       >
-                        {portalLabel || "Visit the Training Portal"}{" "}
+                        Visit the {portalName}{" "}
                         <i className="fa-solid fa-arrow-up-right-from-square"></i>
                       </Button>
                     </a>
@@ -115,7 +120,7 @@ class ServiceModal extends Component {
                   <p>{closing}</p>
                   {portalUrl ? (
                     <p>
-                      Learn more and enroll at{" "}
+                      Learn more at{" "}
                       <a
                         href={portalUrl}
                         target="_blank"
@@ -137,7 +142,7 @@ class ServiceModal extends Component {
               <Button
                 style={{ backgroundColor: "#fd853a", borderColor: "#fd853a" }}
               >
-                Go to Training Portal
+                Go to {portalName}
               </Button>
             </a>
           ) : null}
@@ -155,7 +160,7 @@ const MODAL_CONTENT = {
     title: "FDE",
     titleAccent: "Training",
     portalUrl: FDE_PORTAL_URL,
-    portalLabel: "Visit the FDE Training Portal",
+    portalTitle: "FDE Training Portal",
     intro:
       "I train engineers and teams to work as Forward Deployed Engineers — sitting with the business, framing the real problem, and shipping production-grade AI that moves a measurable metric. The program runs through the FDE Training Portal, a hands-on learning platform.",
     bullets: [
@@ -172,8 +177,10 @@ const MODAL_CONTENT = {
     icon: "fa-share-nodes",
     title: "Ontology Powered",
     titleAccent: "AI Automation",
+    portalUrl: NEXUS_ONTOLOGY_URL,
+    portalTitle: "Nexus Ontology Platform",
     intro:
-      "I model your business as a shared ontology — entities, relationships, and rules — then drive AI automation on top of it, so decisions are grounded in your domain rather than guessed from raw text.",
+      "I model your business as a shared ontology — entities, relationships, and rules — then drive AI automation on top of it, so decisions are grounded in your domain rather than guessed from raw text. This is powered by the Nexus Ontology Platform.",
     bullets: [
       "Domain ontology and knowledge-graph modeling",
       "Grounding LLMs and agents on structured domain knowledge",
