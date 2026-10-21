@@ -61,7 +61,7 @@ const Blogs = () => {
         ],
       };
   return (
-    <div id='blogs'  className="blogs_sec d-block w-100 py-lg-5 py-3 px-lg-5 px-3">
+    <div id='blogs'  className="blogs_sec theme-dark d-block w-100 py-lg-5 py-3 px-lg-5 px-3">
                     <div style={{display:'flex' , alignItems:'start' , justifyContent:'space-between'}}>
   <h2 className="d-block w-100 text-start pb-md-5 mb-3 heading">
           My <span>Blogs</span>

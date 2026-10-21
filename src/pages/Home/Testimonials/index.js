@@ -51,7 +51,7 @@ class Testimonials extends Component {
     };
     return (
 
-      <div className="testimonials-container  d-block w-100 px-lg-5 px-md-3 px-2 py-5 mt-5">
+      <div className="testimonials-container theme-light d-block w-100 px-lg-5 px-md-3 px-2 py-5 mt-5">
         <div className="d-flex w-100 pb-5 heading">
           <div className="d-inline-flex flex-wrap heading-inner">
             <h2>

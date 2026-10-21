@@ -10,7 +10,7 @@ class MyWorkExperince extends Component {
 
   render() {
     return (
-      <div className="experince-container d-block w-100 py-lg-5 py-3 px-lg-5 px-3">
+      <div className="experince-container theme-dark d-block w-100 py-lg-5 py-3 px-lg-5 px-3">
         <h2 className="d-block w-100 text-center pb-md-5 mb-3 heading">
           My <span>Work Experince</span>
         </h2>

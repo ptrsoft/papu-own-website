@@ -5,6 +5,8 @@ import Logo from "../../assets/img/logo.png";
 import githubLogo from "../../assets/icons/github.svg";
 
 const GITHUB_URL = "https://github.com/clouderp-code";
+const ONTOLOGY_URL = "https://thenexusai.tech/";
+const FDE_TRAINING_URL = "https://fde.thenexusai.tech/";
 
 const Header = () => {
   const [expanded, setExpanded] = useState(false);
@@ -60,9 +62,14 @@ const Header = () => {
                   >
                    Portfolios
                   </a>
-
-                  
-                  
+                  <a
+                    href={ONTOLOGY_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-link"
+                  >
+                    Ontology Product
+                  </a>
                 </Nav>
               </Navbar>
             </Col>
@@ -79,6 +86,14 @@ const Header = () => {
             <Col lg={5} md={4} sm={8} xs={6}>
               <Navbar className="justify-content-center">
                 <Nav onClick={handleNavClick}>
+                  <a
+                    href={FDE_TRAINING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-link"
+                  >
+                    FDE Training
+                  </a>
                   <a
                   href="/#blogs"
                     onClick={goToSection("blogs")}
@@ -129,44 +144,43 @@ const Header = () => {
                     >
                       Home
                     </Link>
-                    <Link
-                      to="/about"
-                      className={
-                        activePath === "/about" ? "nav-link active" : "nav-link"
-                      }
-                    >
-                      About
-                    </Link>
-                    <Link
-                      to="/service/migration-modernization"
-                      className={
-                        activePath === "/service/migration-modernization"
-                          ? "nav-link active"
-                          : "nav-link"
-                      }
+                    <a
+                      href="/#services"
+                      onClick={goToSection("services")}
+                      className="nav-link"
                     >
                       Services
-                    </Link>
-                    <Link
-                      to="/resume"
-                      className={
-                        activePath === "/resume"
-                          ? "nav-link active"
-                          : "nav-link"
-                      }
+                    </a>
+                    <a
+                      href="/#portfolio"
+                      onClick={goToSection("portfolio")}
+                      className="nav-link"
                     >
-                      Resume
-                    </Link>
-                    <Link
-                      to="/project"
-                      className={
-                        activePath === "/project"
-                          ? "nav-link active"
-                          : "nav-link"
-                      }
+                      Portfolios
+                    </a>
+                    <a
+                      href={ONTOLOGY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nav-link"
                     >
-                      Project
-                    </Link>
+                      Ontology Product
+                    </a>
+                    <a
+                      href={FDE_TRAINING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="nav-link"
+                    >
+                      FDE Training
+                    </a>
+                    <a
+                      href="/#blogs"
+                      onClick={goToSection("blogs")}
+                      className="nav-link"
+                    >
+                      Blogs
+                    </a>
                     <Link
                       to="/contact"
                       className={
@@ -176,6 +190,13 @@ const Header = () => {
                       }
                     >
                       Contact
+                    </Link>
+                    <Link
+                      to={GITHUB_URL}
+                      target="_blank"
+                      className="nav-link"
+                    >
+                      Github
                     </Link>
                   </Nav>
                 </Navbar.Collapse>

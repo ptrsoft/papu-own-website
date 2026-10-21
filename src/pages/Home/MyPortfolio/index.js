@@ -79,7 +79,7 @@ class MyPortfolio extends Component {
     const { selected } = this.state;
     return (
       <div
-        className="services-container services-modern d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
+        className="services-container services-modern theme-light d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
         id="portfolio"
       >
         <Container fluid>

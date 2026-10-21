@@ -1708,6 +1708,17 @@
   border-radius: 0;
   overflow: visible;
 
+  /* Kill the inherited photo-era dark overlay + rounded clip so the modern
+     flat background shows cleanly (this is what was dimming the section). */
+  &::before {
+    display: none !important;
+  }
+  .services-bg-left,
+  .services-bg-center,
+  .services-bg-right {
+    display: none;
+  }
+
   .heading {
     h2 {
       font-size: 48px;
@@ -1888,6 +1899,184 @@
           }
         }
       }
+    }
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   Alternating light / dark section rhythm
+   Hero(light) → Highlights+Services(dark) → Portfolio(light) →
+   Experience(dark) → WhyHireMe(light) → Blogs(dark) → Testimonials(light)
+   ════════════════════════════════════════════════════════════════════════ */
+
+$sec-dark: #0b1020;
+$sec-light: #f5f7fb;
+
+/* --- Modern card section: LIGHT theme override ------------------------- */
+.services-container.services-modern.theme-light {
+  background: radial-gradient(
+      1200px 400px at 50% -10%,
+      rgba(253, 133, 58, 0.1),
+      transparent 60%
+    ),
+    $sec-light;
+
+  .heading h2 {
+    color: #101828;
+  }
+  .heading p {
+    color: #475467;
+  }
+
+  .service-card {
+    background: #ffffff;
+    border-color: rgba(16, 24, 40, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+    .glow {
+      opacity: 0.25;
+    }
+    h3 {
+      color: #101828;
+    }
+    p {
+      color: #475467;
+    }
+    &.portfolio-card .portfolio-meta .meta-chip {
+      background: rgba(16, 24, 40, 0.04);
+      border-color: rgba(16, 24, 40, 0.1);
+      .meta-label {
+        color: #667085;
+      }
+      .meta-value {
+        color: #101828;
+      }
+      &.impact {
+        background: rgba(253, 133, 58, 0.1);
+        border-color: rgba(253, 133, 58, 0.4);
+        .meta-value {
+          color: #d9691f;
+        }
+      }
+    }
+    &:hover {
+      border-color: rgba(253, 133, 58, 0.55);
+      box-shadow: 0 24px 50px rgba(16, 24, 40, 0.14);
+    }
+  }
+}
+
+/* --- Highlights band: LIGHT theme override (if ever needed) ------------ */
+.highlights-container.theme-light {
+  background: radial-gradient(
+      1200px 400px at 50% -10%,
+      rgba(253, 133, 58, 0.1),
+      transparent 60%
+    ),
+    $sec-light;
+  .highlights-heading h2 {
+    color: #101828;
+  }
+  .highlight-card {
+    background: #ffffff;
+    border-color: rgba(16, 24, 40, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+    h3 {
+      color: #101828;
+    }
+    p {
+      color: #475467;
+    }
+  }
+}
+
+/* --- Experience: DARK theme ------------------------------------------- */
+.experince-container.theme-dark {
+  background: $sec-dark;
+  .heading {
+    color: #ffffff;
+    span {
+      color: #fd853a;
+    }
+  }
+  .experince-left {
+    h3 {
+      color: #ffffff;
+    }
+    span {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+  .experince-right {
+    h3 {
+      color: #ffffff;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+  }
+}
+
+/* --- Blogs: DARK theme ------------------------------------------------- */
+.blogs_sec.theme-dark {
+  background-color: $sec-dark !important;
+  h2 {
+    color: #ffffff;
+    span {
+      color: #fd853a;
+    }
+  }
+  .blog_card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    h3,
+    h4,
+    a {
+      color: #ffffff;
+    }
+    p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+  }
+}
+
+/* --- Testimonials: LIGHT theme + modern cards ------------------------- */
+.testimonials-container.theme-light {
+  background-image: none !important;
+  background: $sec-light !important;
+  border-radius: 0;
+  margin-top: 0 !important;
+  &::before {
+    display: none !important;
+  }
+  .heading {
+    h2 {
+      color: #101828;
+      background-image: none; /* drop the dark-on-dark decorative icon bg */
+      span {
+        color: #fd853a;
+      }
+    }
+    p {
+      color: #475467;
+    }
+  }
+  .testimonial-box {
+    background-color: #ffffff;
+    border: 1px solid rgba(16, 24, 40, 0.08);
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+    &:hover {
+      border-color: rgba(253, 133, 58, 0.5);
+    }
+    .profile .name {
+      strong {
+        color: #101828;
+      }
+      span {
+        color: #667085;
+      }
+    }
+    .contents {
+      color: #475467;
     }
   }
 }
