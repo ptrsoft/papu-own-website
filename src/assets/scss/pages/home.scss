@@ -1696,3 +1696,154 @@
     font-size: 32px;
   }
 }
+
+/* ── Modernised "My Services" section (matches the home highlights band) ── */
+.services-container.services-modern {
+  background: radial-gradient(
+      1200px 400px at 50% -10%,
+      rgba(253, 133, 58, 0.1),
+      transparent 60%
+    ),
+    #0b1020;
+  border-radius: 0;
+  overflow: visible;
+
+  .heading {
+    h2 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      span {
+        color: #fd853a;
+      }
+    }
+    p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 16px;
+      line-height: 25px;
+      font-weight: 300;
+    }
+  }
+
+  /* react-slick: give each slide breathing room + equal-height cards */
+  .services-slider {
+    .slick-track {
+      display: flex;
+    }
+    .slick-slide {
+      height: auto;
+      > div {
+        height: 100%;
+      }
+    }
+  }
+  .services-slide {
+    height: 100%;
+    padding: 12px;
+  }
+
+  .service-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+    padding: 30px 26px;
+    border-radius: 22px;
+    text-decoration: none;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    transition: transform 0.35s ease, border-color 0.35s ease,
+      box-shadow 0.35s ease;
+
+    .glow {
+      position: absolute;
+      top: -40%;
+      right: -25%;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(253, 133, 58, 0.4),
+        transparent 65%
+      );
+      filter: blur(20px);
+      opacity: 0.45;
+      animation: highlightFloat 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .service-card-top {
+      position: relative;
+      z-index: 1;
+    }
+    .service-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      font-size: 27px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #fd853a, #9b5cff);
+      box-shadow: 0 10px 28px rgba(253, 133, 58, 0.38);
+      transition: transform 0.35s ease;
+    }
+
+    h3 {
+      position: relative;
+      z-index: 1;
+      margin: 6px 0 0;
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 15px;
+      line-height: 23px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.76);
+    }
+    .service-cta {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+      padding-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fd853a;
+      i {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(253, 133, 58, 0.6);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      .service-badge {
+        transform: scale(1.08) rotate(-4deg);
+      }
+      .service-cta i {
+        transform: translateX(6px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .services-container.services-modern .heading h2 {
+    font-size: 32px;
+  }
+}

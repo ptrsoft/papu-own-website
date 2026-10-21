@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { Container, Modal, Row, Col, Button } from "react-bootstrap";
-import ServicesBgLeft from "../../../assets/img/services-bg-left.png";
-import ServicesBgCenter from "../../../assets/img/services-bg-center.png";
-import ServicesBgRight from "../../../assets/img/services-bg-right.png";
-import SafeImage from "../../../assets/img/safe.png";
-import SafeImageHover from "../../../assets/img/safe-hover.png";
-import { Link } from "react-router-dom";
 
 // The four key services. Each card renders a Font Awesome icon (FA 6.6.0 is
 // loaded globally in styles.scss) instead of a raster image, so icons always
@@ -269,18 +263,9 @@ class MyServices extends Component {
     };
     return (
       <div
-        className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
+        className="services-container services-modern d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
         id="services"
       >
-        <div className="services-bg-left">
-          <img src={ServicesBgLeft} alt="" />
-        </div>
-        <div className="services-bg-center">
-          <img src={ServicesBgCenter} alt="" />
-        </div>
-        <div className="services-bg-right">
-          <img src={ServicesBgRight} alt="" />
-        </div>
         <Container fluid>
           <div className="d-flex w-100 pb-5 heading">
             <Row className="align-items-end">
@@ -298,49 +283,39 @@ class MyServices extends Component {
               </Col>
             </Row>
           </div>
-          <Slider {...settings} className="mb-5">
-            {SERVICES.map((service) => (
-              <div className="d-block w-100 services-box" key={service.key}>
-                <Link onClick={() => this.setModal(service.key, true)}>
-                  <img src={SafeImage} alt={service.name} className="safe-img" />
-                  <img
-                    src={SafeImageHover}
-                    alt={service.name}
-                    className="safe-img-hover"
-                  />
-
-                  <div className="d-block w-100 services-inner">
-                    <div className="name">{service.name}</div>
-                    <div className="d-block image service-icon-wrap">
-                      <i className={`fa-solid ${service.icon} service-icon`}></i>
-                      {service.caption ? (
-                        <p className="service-caption">{service.caption}</p>
-                      ) : null}
+          <Slider {...settings} className="mb-5 services-slider">
+            {SERVICES.map((service) => {
+              // FDE/Ontology link straight to their portal; others open the modal.
+              const openModal = (e) => {
+                e.preventDefault();
+                this.setModal(service.key, true);
+              };
+              const cardProps = service.portalUrl
+                ? {
+                    href: service.portalUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  }
+                : { href: "#services", onClick: openModal };
+              return (
+                <div className="services-slide" key={service.key}>
+                  <a className="service-card" {...cardProps}>
+                    <span className="glow" aria-hidden="true"></span>
+                    <div className="service-card-top">
+                      <span className="service-badge">
+                        <i className={`fa-solid ${service.icon}`}></i>
+                      </span>
                     </div>
-                  </div>
-                </Link>
-                <div className="button">
-                  {service.portalUrl ? (
-                    <a
-                      href={service.portalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      title="Open the FDE Training Portal"
-                    >
-                      <Button>
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </Button>
-                    </a>
-                  ) : (
-                    <Link onClick={() => this.setModal(service.key, true)}>
-                      <Button>
-                        <i className="fa-solid fa-arrow-right"></i>
-                      </Button>
-                    </Link>
-                  )}
+                    <h3>{service.name}</h3>
+                    {service.caption ? <p>{service.caption}</p> : null}
+                    <span className="service-cta">
+                      {service.portalUrl ? "Visit portal" : "Learn more"}
+                      <i className="fa-solid fa-arrow-right"></i>
+                    </span>
+                  </a>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </Slider>
         </Container>
 
