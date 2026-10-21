@@ -23,9 +23,9 @@ class Home extends Component {
         <MainBanner />
         <Highlights />
         <MyServices />
+        <MyPortfolio />
         <MyWorkExperince />
         <WhyHireMe />
-        <MyPortfolio />
         <Blogs/>
         <Testimonials />
         <AwsomeProject />

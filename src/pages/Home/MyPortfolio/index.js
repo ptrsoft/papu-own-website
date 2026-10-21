@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { Container, Modal, Button } from "react-bootstrap";
-import ServicesBgLeft from "../../../assets/img/services-bg-left.png";
-import ServicesBgCenter from "../../../assets/img/services-bg-center.png";
-import ServicesBgRight from "../../../assets/img/services-bg-right.png";
-import SafeImage from "../../../assets/img/safe.png";
-import SafeImageHover from "../../../assets/img/safe-hover.png";
 
 // Case studies. The full document for each lives in /public/portfolios and is
 // shown in a popup PDF viewer. Sector/Impact metadata is taken straight from
@@ -84,18 +79,9 @@ class MyPortfolio extends Component {
     const { selected } = this.state;
     return (
       <div
-        className="services-container d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
+        className="services-container services-modern d-block w-100 px-lg-5 px-md-3 px-2 py-5 mb-5"
         id="portfolio"
       >
-        <div className="services-bg-left">
-          <img src={ServicesBgLeft} alt="" />
-        </div>
-        <div className="services-bg-center">
-          <img src={ServicesBgCenter} alt="" />
-        </div>
-        <div className="services-bg-right">
-          <img src={ServicesBgRight} alt="" />
-        </div>
         <Container fluid>
           <div className="d-flex w-100 pb-5 heading">
             <h2>
@@ -103,56 +89,45 @@ class MyPortfolio extends Component {
               <p>Selected AI case studies with measurable business impact</p>
             </h2>
           </div>
-          <Slider {...settings} className="mb-5">
-            {caseStudies.map((study) => (
-              <div className="d-block w-100 services-box" key={study.key}>
-                <a
-                  href="#portfolio"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    this.setSelected(study);
-                  }}
-                >
-                  <img src={SafeImage} alt={study.title} className="safe-img" />
-                  <img
-                    src={SafeImageHover}
-                    alt={study.title}
-                    className="safe-img-hover"
-                  />
-
-                  <div className="d-block w-100 services-inner">
-                    <div className="name">{study.title}</div>
-                    <div className="d-block image portfolio-card-body">
-                      <i className={`fa-solid ${study.icon} portfolio-icon`}></i>
-                      <div className="portfolio-meta">
-                        <span className="meta-chip">
-                          <span className="meta-label">Sector</span>
-                          <span className="meta-value">{study.sector}</span>
-                        </span>
-                        <span className="meta-chip impact">
-                          <span className="meta-label">Impact</span>
-                          <span className="meta-value">{study.impact}</span>
-                        </span>
-                      </div>
-                      <p className="portfolio-blurb">{study.blurb}</p>
-                    </div>
-                  </div>
-                </a>
-                <div className="button">
+          <Slider {...settings} className="mb-5 services-slider">
+            {caseStudies.map((study) => {
+              const openModal = (e) => {
+                e.preventDefault();
+                this.setSelected(study);
+              };
+              return (
+                <div className="services-slide" key={study.key}>
                   <a
+                    className="service-card portfolio-card"
                     href="#portfolio"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      this.setSelected(study);
-                    }}
+                    onClick={openModal}
                   >
-                    <Button>
+                    <span className="glow" aria-hidden="true"></span>
+                    <div className="service-card-top">
+                      <span className="service-badge">
+                        <i className={`fa-solid ${study.icon}`}></i>
+                      </span>
+                    </div>
+                    <h3>{study.title}</h3>
+                    <div className="portfolio-meta">
+                      <span className="meta-chip">
+                        <span className="meta-label">Sector</span>
+                        <span className="meta-value">{study.sector}</span>
+                      </span>
+                      <span className="meta-chip impact">
+                        <span className="meta-label">Impact</span>
+                        <span className="meta-value">{study.impact}</span>
+                      </span>
+                    </div>
+                    <p>{study.blurb}</p>
+                    <span className="service-cta">
+                      Read case study
                       <i className="fa-solid fa-arrow-right"></i>
-                    </Button>
+                    </span>
                   </a>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </Slider>
         </Container>
 
