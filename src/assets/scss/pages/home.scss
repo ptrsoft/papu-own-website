@@ -1510,3 +1510,189 @@
     }
     
   }
+
+/* ── Home highlights band: Nexus Ontology Platform + FDE Training ───────── */
+.highlights-container {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+      1200px 400px at 50% -10%,
+      rgba(253, 133, 58, 0.12),
+      transparent 60%
+    ),
+    #0b1020;
+
+  .highlights-heading {
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fdb073;
+      background: rgba(253, 133, 58, 0.12);
+      border: 1px solid rgba(253, 133, 58, 0.35);
+    }
+    h2 {
+      font-size: 44px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      span {
+        color: #fd853a;
+      }
+    }
+  }
+
+  .highlight-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    margin: 12px 0;
+    padding: 36px 32px;
+    border-radius: 24px;
+    text-decoration: none;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    transition: transform 0.35s ease, border-color 0.35s ease,
+      box-shadow 0.35s ease;
+
+    /* soft animated glow that drifts behind the card */
+    .glow {
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(253, 133, 58, 0.45),
+        transparent 65%
+      );
+      filter: blur(20px);
+      opacity: 0.5;
+      animation: highlightFloat 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .highlight-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+    .highlight-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      font-size: 30px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #fd853a, #9b5cff);
+      box-shadow: 0 10px 30px rgba(253, 133, 58, 0.4);
+      transition: transform 0.35s ease;
+    }
+    .highlight-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #fdb073;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(253, 133, 58, 0.35);
+      background: rgba(253, 133, 58, 0.1);
+    }
+
+    h3 {
+      position: relative;
+      z-index: 1;
+      margin: 8px 0 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 16px;
+      line-height: 25px;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.78);
+    }
+    .highlight-cta {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fd853a;
+      i {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(253, 133, 58, 0.6);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      .highlight-icon {
+        transform: scale(1.08) rotate(-4deg);
+      }
+      .highlight-cta i {
+        transform: translateX(6px);
+      }
+    }
+
+    /* entrance animation: fade + slide up when the section loads */
+    &.appear {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: highlightAppear 0.7s ease forwards;
+    }
+    &.delay-0 {
+      animation-delay: 0.1s;
+    }
+    &.delay-1 {
+      animation-delay: 0.28s;
+    }
+  }
+}
+
+@keyframes highlightAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes highlightFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-24px, 24px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .highlights-container .highlights-heading h2 {
+    font-size: 32px;
+  }
+}

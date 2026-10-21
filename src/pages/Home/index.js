@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MainBanner from "./MainBanner";
+import Highlights from "./Highlights";
 import MyWorkExperince from "./MyWorkExperince";
 import WhyHireMe from "./WhyHireMe";
 import MyPortfolio from "./MyPortfolio";
@@ -20,6 +21,7 @@ class Home extends Component {
       <div className="main-container d-block w-100">
         <ScrollToSection />
         <MainBanner />
+        <Highlights />
         <MyServices />
         <MyWorkExperince />
         <WhyHireMe />
