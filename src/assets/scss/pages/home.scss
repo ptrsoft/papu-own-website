@@ -2094,3 +2094,40 @@ $sec-light: #f5f7fb;
     }
   }
 }
+
+/* ── Floating "Schedule a Meeting!" button (Google Calendar link) ──────── */
+.schedule-meeting-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff !important;
+  text-decoration: none;
+  background-color: #fd853a;
+  box-shadow: 0 8px 24px rgba(253, 133, 58, 0.45);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+
+  &:hover {
+    color: #ffffff !important;
+    background-color: #ec7526;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(253, 133, 58, 0.55);
+  }
+}
+
+@media only screen and (max-width: 567px) {
+  .schedule-meeting-btn {
+    right: 14px;
+    bottom: 14px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

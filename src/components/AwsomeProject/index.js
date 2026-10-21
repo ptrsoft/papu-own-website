@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
-import { PopupWidget } from "react-calendly";
 
 class AwsomeProject extends Component {
   constructor(props) {

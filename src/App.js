@@ -19,21 +19,19 @@ import SassAutomation from "./pages/Portfolio/SassAutomation";
 import SREFrameworkDevelopment from "./pages/Portfolio/SREFrameworkDevelopment";
 import Contact from "./pages/Contact";
 
-import { PopupWidget } from "react-calendly";
-
 function App() {
   
   return (
     <div className="App">
 
-      <PopupWidget
-        url="https://calendly.com/papu-bhattacharya-ptrtechnology/30min"
-        rootElement={document.getElementById("root")}
-        text="Schedule a Meeting!"
-        textColor="#ffffff"
-        color="#fd853a"
-       
-      />
+      <a
+        href="https://calendar.app.google/u5qfHp3ZkJeQvLc27"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="schedule-meeting-btn"
+      >
+        Schedule a Meeting!
+      </a>
       <Router>
         <Header />
         <Routes>
