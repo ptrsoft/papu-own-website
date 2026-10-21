@@ -2036,6 +2036,20 @@ $sec-light: #f5f7fb;
     p {
       color: rgba(255, 255, 255, 0.72);
     }
+    /* icon header for article cards without a thumbnail image */
+    .blog_card_icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 18px;
+      border-radius: 16px;
+      font-size: 27px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #fd853a, #9b5cff);
+      box-shadow: 0 10px 28px rgba(253, 133, 58, 0.38);
+    }
   }
 }
 

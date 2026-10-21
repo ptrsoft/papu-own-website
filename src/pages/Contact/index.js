@@ -50,7 +50,13 @@ const Contact = () => {
             return; // Stop submission if there are validation errors
         }
 
-        formData.append("access_key", "5ec1ae3f-410e-4bdf-8274-a4e89d06288f");
+        const accessKey =
+            import.meta.env.VITE_WEB3FORMS_KEY ||
+            "5ec1ae3f-410e-4bdf-8274-a4e89d06288f";
+        formData.append("access_key", accessKey);
+        formData.append("to", "papu.bhattacharya@thenexusai.tech");
+        formData.append("subject", "New contact-form message from papulink.com");
+        formData.append("from_name", "papulink.com — Contact Form");
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -87,6 +93,14 @@ const Contact = () => {
             </div>
             <Form onSubmit={onSubmit} noValidate>
                 <div className="form-container" style={{ maxWidth: '600px', margin: 'auto' }}>
+                    {/* Honeypot: hidden from users; bots that fill it are rejected. */}
+                    <input
+                        type="checkbox"
+                        name="botcheck"
+                        style={{ display: 'none' }}
+                        tabIndex={-1}
+                        autoComplete="off"
+                    />
                     <Row className="mb-3">
                         <Col xs={12}>
                             <Form.Control

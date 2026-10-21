@@ -74,7 +74,29 @@ const Blogs = () => {
 <div>
 
 <div className='blogs_container'>
-    
+
+     <div className='blog_card'>
+    <div className='blog_card_icon'><i className="fa-solid fa-brain"></i></div>
+          <h3>AI Second Brain — First Brain (Massive LLM) + Second (Small LLM)</h3>
+          <p>
+          A "first brain / second brain" approach to AI: pair a massive LLM with a smaller, specialised model so systems stay capable, fast and cost-effective...
+          </p>
+          <a href="https://www.linkedin.com/pulse/first-brain-approach-massive-llm-second-smalllm-papu-bhattacharya-dxjof/" target='_blank' rel="noopener noreferrer">
+          <Button>Read More</Button>
+          </a>
+        </div>
+
+        <div className='blog_card'>
+    <div className='blog_card_icon'><i className="fa-solid fa-robot"></i></div>
+          <h3>The AI-Native Future — Software Evolution Based on Historical Patterns</h3>
+          <p>
+          Where software is heading: using historical patterns to reason about an AI-native future and how teams should build for it...
+          </p>
+          <a href="https://www.linkedin.com/pulse/software-evolution-ai-native-future-based-historical-bhattacharya-yby5f/" target='_blank' rel="noopener noreferrer">
+          <Button>Read More</Button>
+          </a>
+        </div>
+
      <div className='blog_card'>
     <img  src="http://localhost:3000/static/media/SaaS_Automation%20(3).465400846ca221f0df3d.png" alt="" />
           <h3>More in Less-Use a Simple Content Distribution Platform for Web/Mobile Workloads</h3>

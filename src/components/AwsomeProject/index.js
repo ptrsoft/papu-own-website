@@ -13,9 +13,16 @@ class AwsomeProject extends Component {
   onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    
-    // Add access key to formData
-    formData.append("access_key", "5ec1ae3f-410e-4bdf-8274-a4e89d06288f");
+
+    // Web3Forms access key (injected at build time; falls back to the known key).
+    const accessKey =
+      import.meta.env.VITE_WEB3FORMS_KEY ||
+      "5ec1ae3f-410e-4bdf-8274-a4e89d06288f";
+    formData.append("access_key", accessKey);
+    // Route the email + make it easy to spot in the inbox.
+    formData.append("to", "papu.bhattacharya@thenexusai.tech");
+    formData.append("subject", "New project inquiry from papulink.com");
+    formData.append("from_name", "papulink.com — Project Inquiry");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -48,6 +55,14 @@ class AwsomeProject extends Component {
         {/* Email Address Input */}
         <form onSubmit={this.onSubmit}>
           <div className="d-flex flex-column gap-3 align-items-center w-100 text-center">
+            {/* Honeypot: hidden from users; bots that fill it are rejected. */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              style={{ display: "none" }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
             <div className="d-inline-flex align-items-center justify-content-start form">
               <span className="input-icon">
                 <i className="fa-solid fa-envelope"></i>
