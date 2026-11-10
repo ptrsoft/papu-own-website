@@ -18,6 +18,7 @@ import MicroservicesTransformation from "./pages/Portfolio/MicroservicesTransfor
 import SassAutomation from "./pages/Portfolio/SassAutomation";
 import SREFrameworkDevelopment from "./pages/Portfolio/SREFrameworkDevelopment";
 import Contact from "./pages/Contact";
+import { ServicesPage, PortfoliosPage } from "./pages/SectionPages";
 
 function App() {
   
@@ -46,6 +47,10 @@ function App() {
           <Route path="/portfolio/microservices-transformation" element={<MicroservicesTransformation />} />
           <Route path="/portfolio/saas-automation" element={<SassAutomation />} />
           <Route path="/portfolio/sre-framework-development" element={<SREFrameworkDevelopment />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/portfolios" element={<PortfoliosPage />} />
+          <Route path="/service" element={<Navigate to="/services" replace />} />
+          <Route path="/portfolio" element={<Navigate to="/portfolios" replace />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
